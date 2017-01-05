@@ -173,7 +173,7 @@ function setCategoryEnabled(category, enabled) {
 
 // load json file and generate first question
 function loadJson() {
-	return $.get("js/heroes.json", "", function(data) {
+	return $.get("config/heroes.json", "", function(data) {
         heroes = data;
 
 		getQuestions(heroes);

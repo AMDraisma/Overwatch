@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	var listDiv = document.getElementById('list');
 
-	$.get("cgi-bin/heroes.json", "", function(data) {
+	$.get("config/heroes.json", "", function(data) {
 		for (var i in data) {
 			hero = data[i];
 			// every hero gets their own very special div

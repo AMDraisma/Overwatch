@@ -1,0 +1,101 @@
+Shuriken
+Deflect
+Swift Strike
+Dragonblade
+Peacekeeper
+Combat Roll
+Flashbang
+Deadeye
+Rocket Launcher
+Jump Jet
+Concussive Blast
+Barrage
+Hellfire Shotguns
+Wraith Form
+Shadow Step
+Death Blossom
+Heavy Pulse Rifle
+Helix Rockets
+Sprint
+Biotic Field
+Tactical Visor
+Machine Pistol
+Hack
+Thermoptic Camo
+Translocator
+EMP
+Pulse Pistols
+Blink
+Recall
+Pulse Bomb
+Configuration: Recon
+Configuration Sentry
+Reconfigure
+Self Repair
+Configuration: Tank
+Storm Bow
+Sonic arrow
+Scatter arrow
+Dragonstrike
+Frag Launcher
+Concussion Mine
+Steel Trap
+Total Mayhem
+Rip-Tire
+Endothermic Blaster
+Cryo-Freeze
+Ice wall
+Blizzard
+Rivet gun
+Forge hammer
+Build turret
+Armor pack
+Molten core
+Widow's kiss
+Grappling hook
+Venom mine
+Infra-sight
+Light gun
+Call mech
+Fusion cannons
+Boosters
+Defense matrix
+Self-destruct
+Rocket hammer
+Shield
+Charge
+Fire strike
+Earthshatter
+Scrap gun
+Take a breather
+Chain hook
+Whole hog
+Tesla cannon
+Jump pack
+Shield projector
+Primal rage
+Particle cannon
+Particle barrier
+Projected barrier
+Graviton surge
+Biotic rifle
+Sleep dart
+Biotic grenade
+Stim boost
+Sonic amplifier
+Crossfade
+Amp it up
+Sound barrier
+Caduceus staff
+Caduceus blaster
+Guardian Angel
+Angelic descent
+Resurrect
+Photon projector
+Sentry turret
+Photon shield
+Teleporter pad
+Orb of destruction
+Orb of harmony
+Orb of discord
+Transcendence

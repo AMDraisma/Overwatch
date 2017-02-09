@@ -1,6 +1,9 @@
-var heroes;
+var settingsJson
+
 var abilities = [];
 var haDict = {};
+
+var enabledCategories = [];
 
 var questions = {
 	'roles': [],
@@ -10,16 +13,6 @@ var questions = {
 	'movespeed': [],
 	'casttime': [],
 	'headshots': []
-};
-
-var enabledCategories = {};
-
-var categoryGroups = {
-	'default': ['totalhealth', 'cooldown', 'hsa', 'headshots'],
-	'basic': ['roles', 'totalhealth', 'headshots'],
-	'advanced': ['cooldown', 'hsa'],
-	'tryhard': ['movespeed', 'casttime'],
-	'all': []
 };
 
 var currentAnswer;
@@ -56,48 +49,19 @@ var resultOutput = document.getElementById('result');
 
 // initialization
 $(document).ready(function() {
-	$.when(loadJson()).then(function (data) {
-		json = data;
-	});
-
-	$('.category').each(function () {
-		category = $(this).attr('id');
-		if (categoryGroups['default'].indexOf(category) != -1) {
-			setCategoryEnabled(category, true);
-		}
-	});
-
-	$('.category').click(function (e) {
-	    var category = $(this).attr('id');
-
-        $('.categoryGroup').each(function(){
-            $(this).toggleClass('btn-danger', true);
-            $(this).toggleClass('btn-success', false);
-        });
-
-		toggleCategory(category);
-
-		generateQuestion();
-	});
+	getSettings()
+	.then((settingsJson) => {
+		this.settingsJson = settingsJson;
+		generateCategoryMenu(settingsJson);
+	})
+	.then(getHeroInfo(this.settingsJson))
+	.then((heroInfoJson) => {
+		this.heroInfoJson = heroInfoJson;
+		getQuestions(this.heroInfoJson);
+	})
+	//.then(generateQuestion());
 
 
-	$('.categoryGroup').click(function (e) {
-		var group = $(this).attr('id');
-		var categories = categoryGroups[group];
-		var isCategoryInGroup;
-
-		$('.categoryGroup').each(function(){
-			$(this).toggleClass('btn-danger', $(this).attr('id') != group);
-			$(this).toggleClass('btn-success', $(this).attr('id') == group);
-		});
-
-		for (var category in questions) {
-			isCategoryInGroup = categories.indexOf(category) != -1 || group == 'all';
-			setCategoryEnabled(category, isCategoryInGroup);
-		}
-
-		generateQuestion();
-	});
 
 	// listen for enter
 	$(answerDiv).on('keyup', '.text-answer', function(e) {
@@ -135,53 +99,144 @@ $(document).ready(function() {
 	});
 });
 
+function getSettings() {
+	var promise = new Promise((resolve, reject) => {
+		$.get('config/settings.json', '', (settingsJson) => {
+			resolve(settingsJson);
+		})
+		.fail(() => {
+			reject('Failed to load settings json.');
+		});
+	});
+	return promise;
+}
+
+// load json file and generate first question
+function getHeroInfo(settingsJson) {
+	var promise = new Promise((resolve, reject) => {
+		$.get('config/heroes.json', '', function(heroesJson) {
+			resolve(heroesJson);
+		})
+		.fail(() => {
+			reject('Failed to load heroes json.');
+		});
+	});
+	return promise;
+}
+
+// takes an array
+function setCategoriesEnabled(categories) {
+	this.enabledCategories = categories;
+	var categoryButtons = document.getElementsByClassName('category');
+	[].forEach.call(categoryButtons, (categoryButton) => {
+		if (this.enabledCategories.indexOf(categoryButton.id.substr(2)) !== -1 && categoryButton.getAttribute('disabled') !== 'disabled') {
+			categoryButton.setAttribute('class', 'category btn btn-success active');
+		}else{
+			categoryButton.setAttribute('class', 'category btn btn-danger');
+		}
+	});
+}
+
+function toggleCategoryEnabled(category) {
+	var i = this.enabledCategories.indexOf(category);
+	if (i !== -1) {
+		delete this.enabledCategories[i];
+		this.document.getElementById(`c_${category}`).setAttribute('class', 'category btn btn-danger')
+	}else{
+		this.enabledCategories.push(category);
+		this.document.getElementById(`c_${category}`).setAttribute('class', 'category btn btn-success active');
+	}
+}
+
+function changeCategorySetButtonStates(categorySetName) {
+	var categorySetButtons = document.getElementsByClassName('categorySet');
+	[].forEach.call(categorySetButtons, (categorySetButton) => {
+		if (categorySetButton.id.substr(3) === categorySetName) {
+			categorySetButton.setAttribute('class', 'categorySet btn btn-success active');
+		}else{
+			categorySetButton.setAttribute('class', 'categorySet btn btn-danger');
+		}
+	});
+}
+
+function generateCategoryMenu(settingsJson) {
+	var defaultCategorySet;
+
+	settingsJson.categorySets.forEach((categorySet) => {
+		if (categorySet.name === "Default") {
+			defaultCategorySet = categorySet;
+		}
+		createCategorySetElem(settingsJson, categorySet);
+	});
+	if (defaultCategorySet) {
+		setCategoriesEnabled(defaultCategorySet.categories);
+		changeCategorySetButtonStates(defaultCategorySet.name);
+	}
+}
+
+
+function createCategorySetElem(settingsJson, categorySet) {
+	var categorySetButton = document.createElement('btn');
+	categorySetButton.id = `cs_${categorySet.name}`;
+	categorySetButton.innerText = categorySet.name;
+
+	categorySetButton.setAttribute('class', 'categorySet btn btn-danger');
+	categorySetButton.setAttribute('style', 'margin-left: 5px; margin-right: 5px;');
+	
+	if (categorySet.categories.length === 0) {
+		categorySetButton.setAttribute('disabled', 'disabled');
+	}else{
+		categorySetButton.onclick = () => {
+			setCategoriesEnabled(categorySet.categories);
+			changeCategorySetButtonStates(categorySet.name);
+			generateQuestion();
+		};
+
+		if (categorySet.display) {
+			createCategoryElem(settingsJson, categorySet);
+		}
+	}
+	document.getElementById('categorySetButtons').appendChild(categorySetButton);	
+}
+
+
+function createCategoryElem(settingsJson, categorySet) {
+
+	var categorySetButtons = document.createElement('div');
+	categorySetButtons.setAttribute('class', 'col-md-4');
+	categorySetName = document.createElement('h2');
+	categorySetName.innerText = categorySet.name;
+	categorySetButtons.appendChild(categorySetName);
+
+	categorySet.categories.forEach((categoryName) => {
+		var category = settingsJson.categories[categoryName];
+		var categoryButton = document.createElement('btn');
+		categoryButton.id = `c_${categoryName}`;
+		categoryButton.innerText = category.fullName;
+
+		categoryButton.setAttribute('class', 'category btn btn-danger');
+		categoryButton.setAttribute('style', 'margin-left: 5px; margin-right: 5px;');
+
+		categoryButton.onclick = () => {
+			toggleCategoryEnabled(categoryName);
+			generateQuestion();
+		}
+
+		categorySetButtons.appendChild(categoryButton);
+	});
+	document.getElementById('categorySets').appendChild(categorySetButtons);
+}
+
 
 function evalAnswer(answer) {
 	if (answer == currentAnswer) {
-		resultOutput.innerHTML = currentAnswer + " is correct!";
+		resultOutput.innerHTML = currentAnswer + ' is correct!';
 		resultOutput.setAttribute('style', 'background-color: #0B0;');
 	}else{
-		resultOutput.innerHTML = "Wrong.<br>Correct answer: " + currentAnswer;
+		resultOutput.innerHTML = 'Wrong.<br>Correct answer: ' + currentAnswer;
 		resultOutput.setAttribute('style', 'background-color: #B00;');
 	}
 	generateQuestion();
-}
-
-
-function toggleCategory(category) {
-	var enabled = (category in enabledCategories);
-	setCategoryEnabled(category, !enabled);
-}
-
-
-function setCategoryEnabled(category, enabled) {
-	var elem = document.getElementById(category);
-
-	if (enabled) {
-		enabledCategories[category] = questions[category];
-		elem.setAttribute('class', 'category btn btn-success');
-    }else{
-		if (category in enabledCategories) {
-			delete enabledCategories[category];
-		}
-        elem.setAttribute('class', 'category btn btn-danger');
-    }
-	//console.log(enabledCategories);
-}
-
-
-
-// load json file and generate first question
-function loadJson() {
-	return $.get("config/heroes.json", "", function(data) {
-        heroes = data;
-
-		getQuestions(heroes);
-
-		//console.log(questions);
-
-		generateQuestion();
-    });
 }
 
 // generate random question
@@ -193,7 +248,7 @@ function generateQuestion() {
 	}
 	//do {
 		var category = pickRandomProperty(enabledCategories);
-		var question = choose(enabledCategories[category]);
+		var question = choose(questions[enabledCategories[category]]);
 	//} while (question == previousQuestion);
 
 	previousQuestion = question;
@@ -257,7 +312,7 @@ function generateQuestion() {
 
 // helper function to generate top question text html
 function _top(a, b, c, color='text-active') {
-	return '<p>' + a + '<span class="' + color + '"> <i>' + b + '</i> </span>' + c + '</p>';
+	return '<p>' + a + '<span class=\'' + color + '\'> <i>' + b + '</i> </span>' + c + '</p>';
 }
 
 // helper element to generate bottom question element

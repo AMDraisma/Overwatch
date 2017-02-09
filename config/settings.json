@@ -1,0 +1,71 @@
+{
+    "rootPath": "/var/www/games/ow",
+
+    "categories": {
+        "roles": {
+            "fullName": "Hero roles",
+            "path": "hero/role"
+        },
+        "totalhealth": {
+            "fullName": "Total health",
+            "path": "hero/totalhealth"
+        },
+        "headshots": {
+            "fullName": "Headshots",
+            "path": "hero/"
+        },
+        "cooldown": {
+            "fullName": "Cooldowns",
+            "path": "hero/abilities/*/cooldown"
+        },
+        "hsa":{
+            "fullName": "Health/Shield/Armor",
+            "path": "hero/health|shield|armor"
+        },
+        "movespeed": {
+            "fullName": "Movement speed",
+            "path": "hero/movespeed"
+        },
+        "casttime": {
+            "fullName": "Cast time",
+            "path": "hero/abilities/*/casttime"
+        }
+    },
+
+    "categorySets": [
+        {
+            "name": "Default",
+            "categories": [
+                "totalhealth",
+                "headshots",
+                "cooldown",
+                "hsa"
+            ]
+        },
+        {
+            "name": "Basic",
+            "display": "true",
+            "categories": [
+                "roles",
+                "totalhealth",
+                "headshots"
+            ]
+        },
+        {
+            "name": "Advanced",
+            "display": "true",
+            "categories": [
+                "cooldown",
+                "hsa"
+            ]
+        },
+        {
+            "name": "Tryhard",
+            "display": "true",
+            "categories": [
+                "movespeed",
+                "casttime"
+            ]
+        }
+    ]
+}

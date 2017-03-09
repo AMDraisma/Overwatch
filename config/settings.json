@@ -4,38 +4,38 @@
     "categories": [
         {
             "name": "roles",
-            "fullName": "Hero roles",
-            "path": "hero/role"
+            "fullName": "Hero role",
+            "path": "role"
         },
         {
             "name": "totalhealth",
             "fullName": "Total health",
-            "path": "hero/totalhealth"
+            "path": "totalhealth"
         },
         {
             "name": "headshots",
             "fullName": "Headshots",
-            "path": "hero/"
+            "path": "abilities/*/attributes/headshots"
         },
         {
             "name": "cooldown",
             "fullName": "Cooldowns",
-            "path": "hero/abilities/*/cooldown"
+            "path": "abilities/*/attributes/cooldown"
         },
         {
             "name": "hsa",
             "fullName": "Health/Shield/Armor",
-            "path": "hero/health|shield|armor"
+            "path": "health|shield|armor"
         },
         {
             "name": "movespeed",
             "fullName": "Movement speed",
-            "path": "hero/movespeed"
+            "path": "movespeed"
         },
         {
             "name": "casttime",
             "fullName": "Cast time",
-            "path": "hero/abilities/*/casttime"
+            "path": "abilities/*/attributes/casttime"
         }
     ],
 

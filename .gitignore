@@ -1,1 +1,4 @@
 img/*
+
+js/*.js*
+!js/*.old.js

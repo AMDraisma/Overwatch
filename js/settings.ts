@@ -3,7 +3,7 @@
 namespace quiz {
     export interface ICategory {
         name: string;
-        fullname: string;
+        fullName: string;
         path: string;
     }
 

@@ -5,7 +5,6 @@
                 "attributes": {
                     "headshots": "true"
                 },
-                "image": "genji-ability-shuriken.png",
                 "type": "weapon",
                 "name": "Shuriken"
             },
@@ -14,7 +13,6 @@
                     "headshots": "true",
                     "cooldown": "8"
                 },
-                "image": "genji-ability-deflect.png",
                 "type": "ability",
                 "name": "Deflect"
             },
@@ -22,20 +20,17 @@
                 "attributes": {
                     "cooldown": "8"
                 },
-                "image": "genji-ability-swift-strike.png",
                 "type": "ability",
                 "name": "Swift Strike"
             },
             {
                 "attributes": {},
-                "image": "genji-ability-dragonblade.png",
                 "type": "ultimate",
                 "name": "Dragonblade"
             }
         ],
         "name": "Genji",
         "armor": "0",
-        "image": "genji.png",
         "role": "Offense",
         "health": "200",
         "shield": "0"
@@ -46,7 +41,6 @@
                 "attributes": {
                     "headshots": "true"
                 },
-                "image": "mccree-ability-peacekeeper.png",
                 "type": "weapon",
                 "name": "Peacekeeper"
             },
@@ -54,7 +48,6 @@
                 "attributes": {
                     "cooldown": "8"
                 },
-                "image": "mccree-ability-combat-roll.png",
                 "type": "ability",
                 "name": "Combat Roll"
             },
@@ -62,7 +55,6 @@
                 "attributes": {
                     "cooldown": "10"
                 },
-                "image": "mccree-ability-flashbang.png",
                 "type": "ability",
                 "name": "Flashbang"
             },
@@ -70,14 +62,12 @@
                 "attributes": {
                     "headshots": "false"
                 },
-                "image": "mccree-ability-deadeye.png",
                 "type": "ultimate",
                 "name": "Deadeye"
             }
         ],
         "name": "McCree",
         "armor": "0",
-        "image": "mccree.png",
         "role": "Offense",
         "health": "200",
         "shield": "0"
@@ -88,7 +78,6 @@
                 "attributes": {
                     "headshots": "false"
                 },
-                "image": "pharah-ability-rocket-launcher.png",
                 "type": "weapon",
                 "name": "Rocket Launcher"
             },
@@ -96,7 +85,6 @@
                 "attributes": {
                     "cooldown": "10"
                 },
-                "image": "pharah-ability-jump-jet.png",
                 "type": "ability",
                 "name": "Jump Jet"
             },
@@ -104,20 +92,17 @@
                 "attributes": {
                     "cooldown": "12"
                 },
-                "image": "pharah-ability-concussive-blast.png",
                 "type": "ability",
                 "name": "Concussive Blast"
             },
             {
                 "attributes": {},
-                "image": "pharah-ability-barrage.png",
                 "type": "ultimate",
                 "name": "Barrage"
             }
         ],
         "name": "Pharah",
         "armor": "0",
-        "image": "pharah.png",
         "role": "Offense",
         "health": "200",
         "shield": "0"
@@ -128,7 +113,6 @@
                 "attributes": {
                     "headshots": "true"
                 },
-                "image": "reaper-ability-hellfire-shotguns.png",
                 "type": "weapon",
                 "name": "Hellfire Shotguns"
             },
@@ -136,7 +120,6 @@
                 "attributes": {
                     "cooldown": "8"
                 },
-                "image": "reaper-ability-wraith-form.png",
                 "type": "ability",
                 "name": "Wraith Form"
             },
@@ -144,20 +127,17 @@
                 "attributes": {
                     "cooldown": "10"
                 },
-                "image": "reaper-ability-shadow-step.png",
                 "type": "ability",
                 "name": "Shadow Step"
             },
             {
                 "attributes": {},
-                "image": "reaper-ability-death-blossom.png",
                 "type": "ultimate",
                 "name": "Death Blossom"
             }
         ],
         "name": "Reaper",
         "armor": "0",
-        "image": "reaper.png",
         "role": "Offense",
         "health": "250",
         "shield": "0"
@@ -168,7 +148,6 @@
                 "attributes": {
                     "headshots": "true"
                 },
-                "image": "soldier-76-ability-heavy-pulse-rifle.png",
                 "type": "weapon",
                 "name": "Heavy Pulse Rifle"
             },
@@ -177,13 +156,11 @@
                     "headshots": "false",
                     "cooldown": "8"
                 },
-                "image": "soldier-76-ability-helix-rockets.png",
                 "type": "ability",
                 "name": "Helix Rockets"
             },
             {
                 "attributes": {},
-                "image": "soldier-76-ability-sprint.png",
                 "type": "special",
                 "name": "Sprint"
             },
@@ -191,7 +168,6 @@
                 "attributes": {
                     "cooldown": "15"
                 },
-                "image": "soldier-76-ability-biotic-field.png",
                 "type": "ability",
                 "name": "Biotic Field"
             },
@@ -199,14 +175,12 @@
                 "attributes": {
                     "headshots": "false"
                 },
-                "image": "soldier-76-ability-tactical-visor.png",
                 "type": "ultimate",
                 "name": "Tactical Visor"
             }
         ],
         "name": "Soldier 76",
         "armor": "0",
-        "image": "soldier-76.png",
         "role": "Offense",
         "health": "200",
         "shield": "0"
@@ -217,7 +191,6 @@
                 "attributes": {
                     "headshots": "true"
                 },
-                "image": "sombra-ability-machine-pistol.png",
                 "type": "weapon",
                 "name": "Machine Pistol"
             },
@@ -225,7 +198,6 @@
                 "attributes": {
                     "cooldown": "12"
                 },
-                "image": "sombra-ability-hack.png",
                 "type": "ability",
                 "name": "Hack"
             },
@@ -233,7 +205,6 @@
                 "attributes": {
                     "cooldown": "6"
                 },
-                "image": "sombra-ability-thermoptic-camo.png",
                 "type": "ability",
                 "name": "Thermoptic Camo"
             },
@@ -241,20 +212,17 @@
                 "attributes": {
                     "cooldown": "6"
                 },
-                "image": "sombra-ability-translocator.png",
                 "type": "ability",
                 "name": "Translocator"
             },
             {
                 "attributes": {},
-                "image": "sombra-ability-emp.png",
                 "type": "ultimate",
                 "name": "EMP"
             }
         ],
         "name": "Sombra",
         "armor": "0",
-        "image": "sombra.png",
         "role": "Offense",
         "health": "200",
         "shield": "0"
@@ -265,7 +233,6 @@
                 "attributes": {
                     "headshots": "true"
                 },
-                "image": "tracer-ability-pulse-pistols.png",
                 "type": "weapon",
                 "name": "Pulse Pistols"
             },
@@ -273,7 +240,6 @@
                 "attributes": {
                     "cooldown": "3"
                 },
-                "image": "tracer-ability-blink.png",
                 "type": "ability",
                 "name": "Blink"
             },
@@ -281,20 +247,17 @@
                 "attributes": {
                     "cooldown": "12"
                 },
-                "image": "tracer-ability-recall.png",
                 "type": "ability",
                 "name": "Recall"
             },
             {
                 "attributes": {},
-                "image": "tracer-ability-pulse-bomb.png",
                 "type": "ultimate",
                 "name": "Pulse Bomb"
             }
         ],
         "name": "Tracer",
         "armor": "0",
-        "image": "tracer.png",
         "role": "Offense",
         "health": "150",
         "shield": "0"
@@ -305,7 +268,6 @@
                 "attributes": {
                     "headshots": "true"
                 },
-                "image": "bastion-ability-config-recon.png",
                 "type": "weapon",
                 "name": "Configuration: Recon"
             },
@@ -313,19 +275,16 @@
                 "attributes": {
                     "headshots": "true"
                 },
-                "image": "bastion-ability-config-sentry.png",
                 "type": "weapon",
                 "name": "Configuration Sentry"
             },
             {
                 "attributes": {},
-                "image": "bastion-ability-reconfigure.png",
                 "type": "special",
                 "name": "Reconfigure"
             },
             {
                 "attributes": {},
-                "image": "bastion-ability-self-repair.png",
                 "type": "special",
                 "name": "Self Repair"
             },
@@ -333,14 +292,12 @@
                 "attributes": {
                     "headshots": "false"
                 },
-                "image": "bastion-ability-config-tank.png",
                 "type": "ultimate",
                 "name": "Configuration: Tank"
             }
         ],
         "name": "Bastion",
         "armor": "100",
-        "image": "bastion.png",
         "role": "Defense",
         "health": "200",
         "shield": "0"
@@ -351,7 +308,6 @@
                 "attributes": {
                     "headshots": "true"
                 },
-                "image": "hanzo-ability-storm-bow.png",
                 "type": "weapon",
                 "name": "Storm Bow"
             },
@@ -360,7 +316,6 @@
                     "headshots": "true",
                     "cooldown": "20"
                 },
-                "image": "hanzo-ability-sonic-arrow.png",
                 "type": "ability",
                 "name": "Sonic arrow"
             },
@@ -369,20 +324,17 @@
                     "headshots": "true",
                     "cooldown": "10"
                 },
-                "image": "hanzo-ability-scatter-arrow.png",
                 "type": "ability",
                 "name": "Scatter arrow"
             },
             {
                 "attributes": {},
-                "image": "hanzo-ability-dragonstrike.png",
                 "type": "ultimate",
                 "name": "Dragonstrike"
             }
         ],
         "name": "Hanzo",
         "armor": "0",
-        "image": "hanzo.png",
         "role": "Defense",
         "health": "200",
         "shield": "0"
@@ -393,7 +345,6 @@
                 "attributes": {
                     "headshots": "false"
                 },
-                "image": "junkrat-ability-frag-launcher.png",
                 "type": "weapon",
                 "name": "Frag Launcher"
             },
@@ -401,7 +352,6 @@
                 "attributes": {
                     "cooldown": "8"
                 },
-                "image": "junkrat-ability-concussion-mine.png",
                 "type": "ability",
                 "name": "Concussion Mine"
             },
@@ -409,26 +359,22 @@
                 "attributes": {
                     "cooldown": "10"
                 },
-                "image": "junkrat-ability-steel-trap.png",
                 "type": "ability",
                 "name": "Steel Trap"
             },
             {
                 "attributes": {},
-                "image": "junkrat-ability-total-mayhem.png",
                 "type": "special",
                 "name": "Total Mayhem"
             },
             {
                 "attributes": {},
-                "image": "junkrat-ability-rip-tire.png",
                 "type": "ultimate",
                 "name": "Rip-Tire"
             }
         ],
         "name": "Junkrat",
         "armor": "0",
-        "image": "junkrat.png",
         "role": "Defense",
         "health": "200",
         "shield": "0"
@@ -439,7 +385,6 @@
                 "attributes": {
                     "headshots": "true"
                 },
-                "image": "mei-ability-endothermic-blaster.png",
                 "type": "weapon",
                 "name": "Endothermic Blaster"
             },
@@ -447,7 +392,6 @@
                 "attributes": {
                     "cooldown": "12"
                 },
-                "image": "mei-ability-cryo-freeze.png",
                 "type": "ability",
                 "name": "Cryo-Freeze"
             },
@@ -455,20 +399,17 @@
                 "attributes": {
                     "cooldown": "10"
                 },
-                "image": "mei-ability-ice-wall.png",
                 "type": "ability",
                 "name": "Ice wall"
             },
             {
                 "attributes": {},
-                "image": "mei-ability-blizzard.png",
                 "type": "ultimate",
                 "name": "Blizzard"
             }
         ],
         "name": "Mei",
         "armor": "0",
-        "image": "mei.png",
         "role": "Defense",
         "health": "250",
         "shield": "0"
@@ -479,38 +420,32 @@
                 "attributes": {
                     "headshots": "true"
                 },
-                "image": "torbjorn-ability-rivet-gun.png",
                 "type": "weapon",
                 "name": "Rivet gun"
             },
             {
                 "attributes": {},
-                "image": "torbjorn-ability-forge-hammer.png",
                 "type": "weapon",
                 "name": "Forge hammer"
             },
             {
                 "attributes": {},
-                "image": "torbjorn-ability-build-turret.png",
                 "type": "ability",
                 "name": "Build turret"
             },
             {
                 "attributes": {},
-                "image": "torbjorn-ability-armor-pack.png",
                 "type": "special",
                 "name": "Armor pack"
             },
             {
                 "attributes": {},
-                "image": "torbjorn-ability-molten-core.png",
                 "type": "ultimate",
                 "name": "Molten core"
             }
         ],
         "name": "torbjorn",
         "armor": "0",
-        "image": "torbjorn.png",
         "role": "Defense",
         "health": "200",
         "shield": "0"
@@ -522,7 +457,6 @@
                     "headshots": "true",
                     "headshot multiplier": "2.5"
                 },
-                "image": "widowmaker-ability-widows-kiss.png",
                 "type": "weapon",
                 "name": "Widow's kiss"
             },
@@ -530,7 +464,6 @@
                 "attributes": {
                     "cooldown": "12"
                 },
-                "image": "widowmaker-ability-grappling-hook.png",
                 "type": "ability",
                 "name": "Grappling hook"
             },
@@ -538,20 +471,17 @@
                 "attributes": {
                     "cooldown": "15"
                 },
-                "image": "widowmaker-ability-venom-mine.png",
                 "type": "ability",
                 "name": "Venom mine"
             },
             {
                 "attributes": {},
-                "image": "widowmaker-ability-infra-sight.png",
                 "type": "ultimate",
                 "name": "Infra-sight"
             }
         ],
         "name": "Widowmaker",
         "armor": "0",
-        "image": "widowmaker.png",
         "role": "Defense",
         "health": "200",
         "shield": "0"
@@ -562,20 +492,17 @@
                 "attributes": {
                     "headshots": "true"
                 },
-                "image": "dva-ability-light-gun.png",
                 "type": "weapon",
                 "name": "Light gun"
             },
             {
                 "attributes": {},
-                "image": "dva-ability-call-mech.png",
                 "type": "special",
                 "name": "Call mech"
             }
         ],
         "name": "D.Va pilot",
         "armor": "0",
-        "image": "dva.png",
         "role": "Tank",
         "health": "150",
         "shield": "0"
@@ -586,7 +513,6 @@
                 "attributes": {
                     "headshots": "true"
                 },
-                "image": "dva-ability-fusion-cannons.png",
                 "type": "weapon",
                 "name": "Fusion cannons"
             },
@@ -594,26 +520,22 @@
                 "attributes": {
                     "cooldown": "5"
                 },
-                "image": "dva-ability-boosters.png",
                 "type": "ability",
                 "name": "Boosters"
             },
             {
                 "attributes": {},
-                "image": "dva-ability-defense-matrix.png",
                 "type": "special",
                 "name": "Defense matrix"
             },
             {
                 "attributes": {},
-                "image": "dva-ability-self-destruct.png",
                 "type": "ultimate",
                 "name": "Self-destruct"
             }
         ],
         "name": "D.Va mech",
         "armor": "400",
-        "image": "dva.png",
         "role": "Tank",
         "health": "200",
         "shield": "0"
@@ -622,13 +544,11 @@
         "abilities": [
             {
                 "attributes": {},
-                "image": "reinhardt-ability-rocket-hammer.png",
                 "type": "weapon",
                 "name": "Rocket hammer"
             },
             {
                 "attributes": {},
-                "image": "reinhardt-ability-shield.png",
                 "type": "special",
                 "name": "Shield"
             },
@@ -636,7 +556,6 @@
                 "attributes": {
                     "cooldown": "10"
                 },
-                "image": "reinhardt-ability-charge.png",
                 "type": "ability",
                 "name": "Charge"
             },
@@ -644,20 +563,17 @@
                 "attributes": {
                     "cooldown": "6"
                 },
-                "image": "reinhardt-ability-fire-strike.png",
                 "type": "ability",
                 "name": "Fire strike"
             },
             {
                 "attributes": {},
-                "image": "reinhardt-ability-earthshatter.png",
                 "type": "ultimate",
                 "name": "Earthshatter"
             }
         ],
         "name": "Reinhardt",
         "armor": "200",
-        "image": "reinhardt.png",
         "role": "Tank",
         "health": "300",
         "shield": "0"
@@ -668,7 +584,6 @@
                 "attributes": {
                     "headshots": "true"
                 },
-                "image": "roadhog-ability-scrap-gun.png",
                 "type": "weapon",
                 "name": "Scrap gun"
             },
@@ -676,7 +591,6 @@
                 "attributes": {
                     "cooldown": "8"
                 },
-                "image": "roadhog-ability-take-a-breather.png",
                 "type": "ability",
                 "name": "Take a breather"
             },
@@ -684,7 +598,6 @@
                 "attributes": {
                     "cooldown": "6"
                 },
-                "image": "roadhog-ability-chain-hook.png",
                 "type": "ability",
                 "name": "Chain hook"
             },
@@ -692,14 +605,12 @@
                 "attributes": {
                     "headshots": "true"
                 },
-                "image": "roadhog-ability-whole-hog.png",
                 "type": "ultimate",
                 "name": "Whole hog"
             }
         ],
         "name": "Roadhog",
         "armor": "0",
-        "image": "roadhog.png",
         "role": "Tank",
         "health": "600",
         "shield": "0"
@@ -710,7 +621,6 @@
                 "attributes": {
                     "headshots": "false"
                 },
-                "image": "winston-ability-tesla-cannon.png",
                 "type": "weapon",
                 "name": "Tesla cannon"
             },
@@ -718,7 +628,6 @@
                 "attributes": {
                     "cooldown": "6"
                 },
-                "image": "winston-ability-jump-pack.png",
                 "type": "ability",
                 "name": "Jump pack"
             },
@@ -726,20 +635,17 @@
                 "attributes": {
                     "cooldown": "13"
                 },
-                "image": "winston-ability-shield-projector.png",
                 "type": "ability",
                 "name": "Shield projector"
             },
             {
                 "attributes": {},
-                "image": "winston-ability-primal-rage.png",
                 "type": "ultimate",
                 "name": "Primal rage"
             }
         ],
         "name": "Winston",
         "armor": "100",
-        "image": "winston.png",
         "role": "Tank",
         "health": "400",
         "shield": "0"
@@ -750,7 +656,6 @@
                 "attributes": {
                     "headshots": "false"
                 },
-                "image": "zarya-ability-particle-cannon.png",
                 "type": "weapon",
                 "name": "Particle cannon"
             },
@@ -758,7 +663,6 @@
                 "attributes": {
                     "cooldown": "10"
                 },
-                "image": "zarya-ability-particle-barrier.png",
                 "type": "ability",
                 "name": "Particle barrier"
             },
@@ -766,20 +670,17 @@
                 "attributes": {
                     "cooldown": "8"
                 },
-                "image": "zarya-ability-projected-barrier.png",
                 "type": "ability",
                 "name": "Projected barrier"
             },
             {
                 "attributes": {},
-                "image": "zarya-ability-graviton-surge.png",
                 "type": "ultimate",
                 "name": "Graviton surge"
             }
         ],
         "name": "Zarya",
         "armor": "0",
-        "image": "zarya.png",
         "role": "Tank",
         "health": "200",
         "shield": "200"
@@ -790,7 +691,6 @@
                 "attributes": {
                     "headshots": "false"
                 },
-                "image": "ana-ability-biotic-rifle.png",
                 "type": "weapon",
                 "name": "Biotic rifle"
             },
@@ -798,7 +698,6 @@
                 "attributes": {
                     "cooldown": "12"
                 },
-                "image": "ana-ability-sleep-dart.png",
                 "type": "ability",
                 "name": "Sleep dart"
             },
@@ -806,20 +705,17 @@
                 "attributes": {
                     "cooldown": "10"
                 },
-                "image": "ana-ability-biotic-grenade.png",
                 "type": "ability",
                 "name": "Biotic grenade"
             },
             {
                 "attributes": {},
-                "image": "ana-ability-stim-boost.png",
                 "type": "ultimate",
                 "name": "Stim boost"
             }
         ],
         "name": "Ana",
         "armor": "0",
-        "image": "ana.png",
         "role": "Support",
         "health": "200",
         "shield": "0"
@@ -830,13 +726,11 @@
                 "attributes": {
                     "headshots": "true"
                 },
-                "image": "lucio-ability-sonic-amplifier.png",
                 "type": "weapon",
                 "name": "Sonic amplifier"
             },
             {
                 "attributes": {},
-                "image": "lucio-ability-crossfade.png",
                 "type": "special",
                 "name": "Crossfade"
             },
@@ -844,20 +738,17 @@
                 "attributes": {
                     "cooldown": "12"
                 },
-                "image": "lucio-ability-amp-it-up.png",
                 "type": "ability",
                 "name": "Amp it up"
             },
             {
                 "attributes": {},
-                "image": "lucio-ability-sound-barrier.png",
                 "type": "ultimate",
                 "name": "Sound barrier"
             }
         ],
         "name": "Lúcio",
         "armor": "0",
-        "image": "lucio.png",
         "role": "Support",
         "health": "200",
         "shield": "0"
@@ -866,7 +757,6 @@
         "abilities": [
             {
                 "attributes": {},
-                "image": "mercy-ability-caduceus-staff.png",
                 "type": "weapon",
                 "name": "Caduceus staff"
             },
@@ -874,7 +764,6 @@
                 "attributes": {
                     "headshots": "true"
                 },
-                "image": "mercy-ability-caduceus-blaster.png",
                 "type": "weapon",
                 "name": "Caduceus blaster"
             },
@@ -882,26 +771,22 @@
                 "attributes": {
                     "cooldown": "1.5"
                 },
-                "image": "mercy-ability-guardian-angel.png",
                 "type": "ability",
                 "name": "Guardian Angel"
             },
             {
                 "attributes": {},
-                "image": "mercy-ability-angelic-descent.png",
                 "type": "special",
                 "name": "Angelic descent"
             },
             {
                 "attributes": {},
-                "image": "mercy-ability-resurrect.png",
                 "type": "ultimate",
                 "name": "Resurrect"
             }
         ],
         "name": "Mercy",
         "armor": "0",
-        "image": "mercy.png",
         "role": "Support",
         "health": "200",
         "shield": "0"
@@ -912,7 +797,6 @@
                 "attributes": {
                     "headshots": "false"
                 },
-                "image": "symmetra-ability-photon-projector.png",
                 "type": "weapon",
                 "name": "Photon projector"
             },
@@ -920,7 +804,6 @@
                 "attributes": {
                     "cooldown": "10"
                 },
-                "image": "symmetra-ability-sentry-turret.png",
                 "type": "ability",
                 "name": "Sentry turret"
             },
@@ -928,20 +811,17 @@
                 "attributes": {
                     "cooldown": "1"
                 },
-                "image": "symmetra-ability-photon-shield.png",
                 "type": "ability",
                 "name": "Photon shield"
             },
             {
                 "attributes": {},
-                "image": "symmetra-ability-teleporter-pad.png",
                 "type": "ultimate",
                 "name": "Teleporter pad"
             }
         ],
         "name": "symmetra",
         "armor": "0",
-        "image": "symmetra.png",
         "role": "Support",
         "health": "100",
         "shield": "100"
@@ -952,32 +832,27 @@
                 "attributes": {
                     "headshots": "true"
                 },
-                "image": "zenyatta-ability-orb-of-destruction.png",
                 "type": "weapon",
                 "name": "Orb of destruction"
             },
             {
                 "attributes": {},
-                "image": "zenyatta-ability-orb-of-harmony.png",
                 "type": "special",
                 "name": "Orb of harmony"
             },
             {
                 "attributes": {},
-                "image": "zenyatta-ability-orb-of-discord.png",
                 "type": "special",
                 "name": "Orb of discord"
             },
             {
                 "attributes": {},
-                "image": "zenyatta-ability-transcendence.png",
                 "type": "ultimate",
                 "name": "Transcendence"
             }
         ],
         "name": "Zenyatta",
         "armor": "0",
-        "image": "zenyatta.png",
         "role": "Support",
         "health": "50",
         "shield": "150"

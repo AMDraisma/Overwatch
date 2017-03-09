@@ -1,36 +1,43 @@
 {
-    "rootPath": "/var/www/games/ow",
+    "imagePath": "/var/ww/games/ow/img",
 
-    "categories": {
-        "roles": {
+    "categories": [
+        {
+            "name": "roles",
             "fullName": "Hero roles",
             "path": "hero/role"
         },
-        "totalhealth": {
+        {
+            "name": "totalhealth",
             "fullName": "Total health",
             "path": "hero/totalhealth"
         },
-        "headshots": {
+        {
+            "name": "headshots",
             "fullName": "Headshots",
             "path": "hero/"
         },
-        "cooldown": {
+        {
+            "name": "cooldown",
             "fullName": "Cooldowns",
             "path": "hero/abilities/*/cooldown"
         },
-        "hsa":{
+        {
+            "name": "hsa",
             "fullName": "Health/Shield/Armor",
             "path": "hero/health|shield|armor"
         },
-        "movespeed": {
+        {
+            "name": "movespeed",
             "fullName": "Movement speed",
             "path": "hero/movespeed"
         },
-        "casttime": {
+        {
+            "name": "casttime",
             "fullName": "Cast time",
             "path": "hero/abilities/*/casttime"
         }
-    },
+    ],
 
     "categorySets": [
         {

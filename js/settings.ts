@@ -1,13 +1,13 @@
 /// <reference path="_reference.ts" />
 
 namespace quiz {
-    interface ICategory {
+    export interface ICategory {
         name: string;
         fullname: string;
         path: string;
     }
 
-    interface ICategorySet {
+    export interface ICategorySet {
         name: string;
         categories: string[];
     }
@@ -19,7 +19,7 @@ namespace quiz {
         categorySets: ICategorySet[];
     }
 
-    function getSettings() {
+    export function getSettings(): Promise<ISettings> {
         let promise = new Promise((resolve: Function, reject: Function) => {
             $.get('config/settings.json', '', (settingsJson) => {
                 resolve(settingsJson);

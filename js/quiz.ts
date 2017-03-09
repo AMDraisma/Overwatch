@@ -1,4 +1,4 @@
-/// <reference path="hero.ts" />
+/// <reference path="_reference.ts" />
 
 namespace quiz{
     export interface IHeroData {
@@ -11,16 +11,18 @@ namespace quiz{
         public ability: IAbility;
         public abilityAttribute: {[value: string]: string};
         public answer: any;
+
+        public getIsAbility(): boolean {
+            return !this.ability === undefined;
+        }
     }
 
     export class GameMaster {
-        private categories: string[] = [];
-
-        public generateQuestion(heroes: IHero[]): Question {
+        public static GenerateQuestion(heroes: IHero[], categories: string[]): Question {
             let q: Question = new Question;
 
             q.hero = GameMaster.PickRandom<IHero>(heroes);
-            q.attribute = GameMaster.PickRandom<string>(this.categories);
+            q.attribute = GameMaster.PickRandom<string>(categories);
             q.ability = GameMaster.PickRandom<IAbility>(q.hero.abilities);
             if (q.attribute in q.ability) {
                 q.answer = q.ability.attributes[q.attribute];
@@ -31,8 +33,7 @@ namespace quiz{
         }
 
         private static PickRandom<T>(arr: T[]): T {
-            // this does not feel right
-            return arr[Math.random()*100%arr.length];
+            return arr[Math.floor(Math.random()*arr.length)];
         }
     }
 }

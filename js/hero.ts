@@ -1,4 +1,4 @@
-/// <reference path="quiz.ts" />
+/// <reference path="_reference.ts" />
 
 namespace quiz {
     export enum abilityType {

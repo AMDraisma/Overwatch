@@ -10,18 +10,6 @@ let questionFooter: HTMLElement = document.getElementById('qfooter');
 
 let questionImage: HTMLElement = document.getElementById('qimg');
 
-function getHeroData(): Promise<quiz.IHero[]> {
-    let promise = new Promise((resolve: Function , reject: Function ) => {
-        $.get('config/heroes.json').then((heroData) => {
-            resolve(heroData);
-        })
-        .fail(() => {
-            reject('Failed to load hero json.');
-        });
-    });
-    return promise;
-}
-
 function displayQuestion(q: quiz.Question) {
     questionHeader.innerHTML = `<p>What is the <span class="text-primary">${q.attribute}</span> of</p>`;
 
@@ -37,7 +25,7 @@ $(document).ready(() => {
     .then((data: quiz.ISettings) => {
         settings = data;
     })
-    .then(getHeroData)
+    .then(quiz.getHeroData)
     .then((data: quiz.IHero[]) => {
         heroData = data;
 

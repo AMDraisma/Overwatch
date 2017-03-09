@@ -27,4 +27,16 @@ namespace quiz {
         armor: string;
         [attribute: string]: any;
     }
+
+    export function getHeroData(): Promise<quiz.IHero[]> {
+        let promise = new Promise((resolve: Function , reject: Function ) => {
+            $.get('config/heroes.json').then((heroData) => {
+                resolve(heroData);
+            })
+            .fail(() => {
+                reject('Failed to load hero json.');
+            });
+        });
+        return promise;
+    }
 }

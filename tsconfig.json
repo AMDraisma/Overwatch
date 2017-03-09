@@ -3,7 +3,10 @@
         "module": "commonjs",
         "target": "es5",
         "noImplicitAny": true,
-        "sourceMap": true
+        "sourceMap": true,
+        "types": [
+            "/typings/index.d.ts"
+        ]
     },
     "exclude": [
         "node_modules"

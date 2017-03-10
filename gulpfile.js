@@ -19,9 +19,6 @@ gulp.task('npm:copy', (cb) => {
 gulp.task('ow:copy', (cb) => {
     gulp.src(['src/*.html'], {base: 'src'})
         .pipe(gulp.dest(`${wwwroot}`));
-    gulp.src(['src/js/*'], {base: 'src'})
-        //.pipe(minify())
-        .pipe(gulp.dest(`${wwwroot}`));
     gulp.src(['src/config/*'], {base: 'src'})
         .pipe(gulp.dest(`${wwwroot}`));
     cb();
@@ -30,12 +27,12 @@ gulp.task('ow:copy', (cb) => {
 
 // compile typescript
 gulp.task('tsc', (cb) => {
-    gulp.src([`${wwwroot}/js/*.ts`])
+    gulp.src([`src/js/*.ts`])
         .pipe(typescript({
             "module": "commonjs",
             "target": "ES6",
             "noimplicitany": true,
-            "sourcemap": true
+            "sourcemap": false
         }))
         .pipe(gulp.dest(`${wwwroot}/js`))
     cb();

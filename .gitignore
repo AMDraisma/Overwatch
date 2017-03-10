@@ -1,6 +1,5 @@
 # acquired images
 wwwroot/*
-!wwwroot/*.html
 
 # generated JS
 src/js/*.js*

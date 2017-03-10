@@ -1,18 +1,14 @@
 var gulp = require('gulp');
 var runSequence = require('run-sequence');
 var minify = require('gulp-minify');
+var inject = require('gulp-inject');
 
 var wwwroot = './wwwroot'
-
-// project prep
-gulp.task('make', () => {
-
-});
-
+var libs = '{bootstrap,jquery}'
 
 // npm dependencies
 gulp.task('npm:copy', (cb) => {
-    gulp.src(['node_modules/*/dist/*'], {base: 'node_modules'})
+    gulp.src([`node_modules/${libs}/dist/*`], {base: 'node_modules'})
         .pipe(gulp.dest(`${wwwroot}/lib/`));
     cb();
 });
@@ -21,19 +17,19 @@ gulp.task('npm:copy', (cb) => {
 // overwatch stuff
 gulp.task('ow:copy', (cb) => {
     gulp.src(['src/*.html'], {base: 'src'})
-        .pipe(gulp.dest(`${wwwroot}/`));
-    gulp.src(['src/js/*.js'], {base: 'src/js'})
+        .pipe(gulp.dest(`${wwwroot}`));
+    gulp.src(['src/js/*'], {base: 'src'})
         //.pipe(minify())
-        .pipe(gulp.dest(`${wwwroot}/js`));
-    gulp.src(['src/config/*'], {base: 'src/config'})
-        .pipe(gulp.dest(`${wwwroot}/config`));
+        .pipe(gulp.dest(`${wwwroot}`));
+    gulp.src(['src/config/*'], {base: 'src'})
+        .pipe(gulp.dest(`${wwwroot}`));
     cb();
 });
 
 // inject dependencies
 gulp.task('npm:insertfiles', function(cb){
     return gulp.src(`${wwwroot}/index.html`) //file with tags for injection
-        .pipe(inject(gulp.src([`.${wwwroot}/lib/**/*.min.js`, `.${wwwroot}/lib/*.css`], {read: false}), {
+        .pipe(inject(gulp.src([`${wwwroot}/lib/**/*.min.js`, `.${wwwroot}/lib/**/*.css`], {read: false}), {
                 starttag: '<!-- npm:{{ext}} -->',
                 endtag: '<!-- endnpm -->',
                 relative:true
@@ -44,7 +40,7 @@ gulp.task('npm:insertfiles', function(cb){
 
 gulp.task('ow:insertfiles', function(cb){
     return gulp.src(`${wwwroot}/index.html`) //file with tags for injection
-        .pipe(inject(gulp.src([`.${wwwroot}/js/*.js`], {read: false}), {
+        .pipe(inject(gulp.src([`${wwwroot}/js/*.js`], {read: false}), {
                 starttag: '<!-- ow:{{ext}} -->',
                 endtag: '<!-- endow -->',
                 relative:true
@@ -54,5 +50,5 @@ gulp.task('ow:insertfiles', function(cb){
 });
 
 gulp.task('default', () => {
-    runSequence('npm:copy', 'ow:copy');
+    runSequence('npm:copy', 'ow:copy', 'npm:insertfiles');
 });

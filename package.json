@@ -2,7 +2,7 @@
   "name": "overwatch",
   "version": "0.0.1",
   "repository": {
-      "url": "https://github.com/AMDraisma/overwatch.git"
+    "url": "https://github.com/AMDraisma/overwatch.git"
   },
   "private": true,
   "license": "MIT",
@@ -11,10 +11,10 @@
     "bootstrap": "~3.3.7"
   },
   "devDependencies": {
-    "typings": "^2.1.0",
     "gulp": "~3.9.1",
     "gulp-inject": "~4.2.0",
+    "gulp-minify": "^0.0.15",
     "run-sequence": "~1.2.2",
-    "main-npm-files": "~1.2.1"
+    "typings": "^2.1.0"
   }
 }

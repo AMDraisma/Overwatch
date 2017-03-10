@@ -13,12 +13,6 @@
         "comment-format": [
             false
         ],
-        // i don't care so much for property documentation, but I do for everything else
-        "completed-docs": [
-            "classes",
-            "functions",
-            "methods"
-        ],
         // increases readability
         "curly": true,
         // gets rid of the passive-aggressive icon at the bottom of files on github

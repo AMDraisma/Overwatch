@@ -5,8 +5,7 @@
         "noImplicitAny": true,
         "sourceMap": true
     },
-    "exclude": [
-        "node_modules/*",
-        "src/*"
+    "include": [
+        "wwwroot/js/*.ts"
     ]
 }

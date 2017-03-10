@@ -44,7 +44,7 @@ gulp.task('tsc', (cb) => {
 // inject dependencies
 gulp.task('insertjs', function(cb){
     return gulp.src(`${wwwroot}/index.html`) //file with tags for injection
-        .pipe(inject(gulp.src([`${wwwroot}/lib/*/**/*.min.js`, `${wwwroot}/js/*.js`], {base: wwwroot}), {
+        .pipe(inject(gulp.src([`${wwwroot}/lib/${libs}/**/${libs}.min.js`, `${wwwroot}/js/*.js`], {base: wwwroot}), {
                 starttag: '<!-- gulp:js -->',
                 endtag: '<!-- endgulp -->',
                 relative:true

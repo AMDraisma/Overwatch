@@ -1,0 +1,34 @@
+{
+  "name": "overwatch",
+  "homepage": "https://github.com/AMDraisma/Overwatch",
+  "authors": [
+    "CrudeOil <adraisma@gmail.com>"
+  ],
+  "description": "Overwatch quiz",
+  "main": "index.html",
+  "keywords": [
+    "overwatch",
+    "blizzard",
+    "quiz",
+    "questions",
+    "video",
+    "games"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "latest",
+    "bootstrap": "latest"
+  },
+  "devDependencies": {
+    "gulp": "latest",
+    "DefinitelyTyped": "latest"
+  }
+}

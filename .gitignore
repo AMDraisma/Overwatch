@@ -1,6 +1,10 @@
+# acquired images
 img/*
 
+# generated JS
 js/*.js*
 !js/*.old.js
 
+# dependencies
 typings/*
+bower_components/*

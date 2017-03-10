@@ -1,0 +1,15 @@
+{
+  "name": "overwatch",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "~3.1.1",
+    "bootstrap": "~3.3.7"
+  },
+  "devDependencies": {
+    "typings": "^2.1.0",
+    "gulp": "~3.9.1",
+    "gulp-inject": "~4.2.0",
+    "run-sequence": "~1.2.2",
+    "main-npm-files": "~1.2.1"
+  }
+}

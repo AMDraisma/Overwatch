@@ -43,29 +43,41 @@ gulp.task('tsc', (cb) => {
 
 // inject dependencies
 gulp.task('insertjs', function(cb){
-    return gulp.src(`${wwwroot}/index.html`) //file with tags for injection
+    return gulp.src(`${wwwroot}/index.html`)
         .pipe(inject(gulp.src([`${wwwroot}/lib/${libs}/**/${libs}.min.js`, `${wwwroot}/js/*.js`], {base: wwwroot}), {
                 starttag: '<!-- gulp:js -->',
                 endtag: '<!-- endgulp -->',
                 relative:true
             }
         ))
-        .pipe(gulp.dest(wwwroot)); //where index.html will be saved. Same dir for overwrite old one
+        .pipe(gulp.dest(wwwroot))
     cb();
 });
 
 gulp.task('insertcss', function(cb){
-    return gulp.src(`${wwwroot}/index.html`) //file with tags for injection
+    return gulp.src(`${wwwroot}/index.html`)
         .pipe(inject(gulp.src([`${wwwroot}/lib/*/**/*.css`], {base: wwwroot}), {
                 starttag: '<!-- gulp:css -->',
                 endtag: '<!-- endgulp -->',
                 relative:true
             }
         ))
-        .pipe(gulp.dest(wwwroot)); //where index.html will be saved. Same dir for overwrite old one
+        .pipe(gulp.dest(wwwroot))
     cb();
 });
 
-gulp.task('deploy', () => {
+gulp.task('deployprod', () => {
     runSequence('npm:copy', 'ow:copy', 'tsc', 'insertjs', 'insertcss');
+});
+
+gulp.task('deploydev', (cb) => {
+    gulp.src([`src/js/*.ts`])
+        .pipe(typescript({
+            "module": "commonjs",
+            "target": "ES6",
+            "noimplicitany": true,
+            "sourcemap": true
+        }))
+        .pipe(gulp.dest(`src/js`))
+    cb();
 });

@@ -9,12 +9,5 @@
   "dependencies": {
     "jquery": "~3.1.1",
     "bootstrap": "~3.3.7"
-  },
-  "devDependencies": {
-    "gulp": "~3.9.1",
-    "gulp-inject": "~4.2.0",
-    "gulp-minify": "^0.0.15",
-    "run-sequence": "~1.2.2",
-    "typings": "^2.1.0"
   }
 }

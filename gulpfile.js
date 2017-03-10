@@ -66,6 +66,6 @@ gulp.task('insertcss', function(cb){
     cb();
 });
 
-gulp.task('default', () => {
+gulp.task('deploy', () => {
     runSequence('npm:copy', 'ow:copy', 'tsc', 'insertjs', 'insertcss');
 });

@@ -1,0 +1,57 @@
+{
+    "rules": {
+        // if we're gonna use spaces over tabs we might as well make use of them
+        "align": [
+            true
+        ],
+        // data => {}; vs (data) => {};
+        // this one is just preference. i welcome any objective arguments to omit the parens
+        "arrow-parens": true,
+        // i started serious programming with java and i don't like change
+        "class-name": true,
+        // i often use TODO at the start of comments, tslint does not like captials at start of single-line comments
+        "comment-format": [
+            false
+        ],
+        // i don't care so much for property documentation, but I do for everything else
+        "completed-docs": [
+            "classes",
+            "functions",
+            "methods"
+        ],
+        // increases readability
+        "curly": true,
+        // gets rid of the passive-aggressive icon at the bottom of files on github
+        "eofline": true,
+        // hopefully increases readability
+        "interface-name": [
+            "always-prefix"
+        ],
+        // come on son
+        "linebreak-style": [
+            "LF"
+        ],
+        // arbitrary choice. I know it's traditionally 80
+        "max-line-length": [
+            120
+        ],
+        // i don't like change
+        "new-parens": true,
+        // you're in bigger trouble when you need eval
+        "no-eval": true,
+        // use undefined instead
+        "no-null-keyword": true,
+        // json does not allow this, and neither will anything else
+        "trailing-comma": [
+            false
+        ],
+        // javascript why
+        "triple-equals": [
+            true
+        ],
+        // consistency
+        "variable-name": [
+            true
+        ]
+    }
+}

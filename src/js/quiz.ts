@@ -23,9 +23,9 @@ namespace quiz{
 
             q.hero = GameMaster.PickRandom<IHero>(heroes);
             let category: ICategory = GameMaster.PickRandom<ICategory>(categories);
-            q.attribute = category.fullName;
-            // TODO: neat, but need what this is an answer to
-            q.answer = GameMaster.PickFromPath(q.hero, category.path);
+            let qa: string[] = GameMaster.PickFromPath(q.hero, category.path);
+            q.attribute = qa[0];
+            q.answer = qa[1];
             console.log(q);
             return q;
         }
@@ -34,7 +34,7 @@ namespace quiz{
             return arr[Math.floor(Math.random()*arr.length)];
         }
 
-        private static PickFromPath(obj: any, path: string, attribute: boolean = false): {[value: string]: string} {
+        private static PickFromPath(obj: any, path: string, result: string[] = []): string[] {
             let splitpath: string[] = [];
             let i: number = path.indexOf('/');
 
@@ -51,9 +51,10 @@ namespace quiz{
                     // TODO: dear god think of something better
                     while (answer === undefined) {
                         subSelection = GameMaster.PickRandom<any>(obj)
-                        answer = GameMaster.PickFromPath(subSelection, splitpath[1]);
+                        result = GameMaster.PickFromPath(subSelection, splitpath[1]);
                     }
-                    return answer;
+                    result[0] = subSelection.name;
+                    return result;
                 }
                 if (splitpath[0].indexOf('|') !== -1) {
                     let choice = GameMaster.PickRandom<string>(splitpath[0].split('|'))
@@ -61,7 +62,7 @@ namespace quiz{
                     return GameMaster.PickFromPath(subSelection, splitpath[1]);
                 }
             }else{
-                return obj[path];
+                return [path, obj[path]];
             }
         }
     }

@@ -1,9 +1,10 @@
 # acquired images
-img/*
+wwwroot/*
+!wwwroot/*.html
 
 # generated JS
-js/*.js*
-!js/*.old.js
+src/js/*.js*
+!src/js/*.old.js
 
 # dependencies
 typings/*

@@ -24,14 +24,14 @@ $(document).ready(() => {
     quiz.getSettings()
     .then((data: quiz.ISettings) => {
         settings = data;
-        enabledCategories = [settings.categories[3]];
+        enabledCategories = [settings.categories[1]];
     })
     .then(quiz.getHeroData)
     .then((data: quiz.IHero[]) => {
         heroData = data;
 
         let q: quiz.Question = quiz.GameMaster.GenerateQuestion(heroData, enabledCategories);
-        displayQuestion(q);
+        // displayQuestion(q);
     });
     
 });

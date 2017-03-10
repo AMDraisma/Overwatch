@@ -31,7 +31,12 @@ gulp.task('ow:copy', (cb) => {
 // compile typescript
 gulp.task('tsc', (cb) => {
     gulp.src([`${wwwroot}/js/*.ts`])
-        .pipe(typescript())
+        .pipe(typescript({
+            "module": "commonjs",
+            "target": "ES6",
+            "noimplicitany": true,
+            "sourcemap": true
+        }))
         .pipe(gulp.dest(`${wwwroot}/js`))
     cb();
 });

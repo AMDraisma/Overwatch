@@ -1,50 +1,43 @@
 {
     "imagePath": "https://croil.net/games/ow/img",
 
-    "categories": [
-        {
-            "name": "roles",
+    "categories": {
+        "roles": {
             "fullName": "Hero role",
             "path": "role",
             "questionTextName": "heroAttribute"
         },
-        {
-            "name": "totalhealth",
+        "totalhealth": {
             "fullName": "Total health",
             "path": "totalhealth",
             "questionTextName": "heroAttribute"
         },
-        {
-            "name": "headshots",
+        "headshots": {
             "fullName": "Headshots",
             "path": "abilities/*/attributes/headshots",
             "questionTextName": "abilityEnabled"
         },
-        {
-            "name": "cooldown",
+        "cooldown": {
             "fullName": "Cooldown",
             "path": "abilities/*/attributes/cooldown",
             "questionTextName": "abilityAttribute"
         },
-        {
-            "name": "hsa",
+        "hsa": {
             "fullName": "Health/Shield/Armor",
             "path": "health|shield|armor",
             "questionTextName": "heroAttribute"
         },
-        {
-            "name": "movespeed",
+        "movespeed": {
             "fullName": "Movement speed",
             "path": "movespeed",
             "questionTextName": "heroAttribute"
         },
-        {
-            "name": "casttime",
+        "casttime": {
             "fullName": "Cast time",
             "path": "abilities/*/attributes/casttime",
             "questionTextName": "abilityAttribute"
         }
-    ],
+    },
 
     "questionText": {
         "abilityAttribute": {
@@ -61,9 +54,8 @@
         }
     },
 
-    "categorySets": [
-        {
-            "name": "Default",
+    "categorySets": {
+        "Default": {
             "categories": [
                 "totalhealth",
                 "headshots",
@@ -71,8 +63,7 @@
                 "hsa"
             ]
         },
-        {
-            "name": "Basic",
+        "Basic": {
             "display": "true",
             "categories": [
                 "roles",
@@ -80,21 +71,19 @@
                 "headshots"
             ]
         },
-        {
-            "name": "Advanced",
+        "Advanced": {
             "display": "true",
             "categories": [
                 "cooldown",
                 "hsa"
             ]
         },
-        {
-            "name": "Tryhard",
+        "Tryhard": {
             "display": "true",
             "categories": [
                 "movespeed",
                 "casttime"
             ]
         }
-    ]
+    }
 }

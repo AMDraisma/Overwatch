@@ -14,33 +14,39 @@ namespace quiz {
     }
 
     export interface ICategory {
-        name: string;
         fullName: string;
         path: string;
         questionTextName: string
     }
 
     export interface ICategorySet {
-        name: string;
         categories: string[];
     }
 
-    export interface ISettings {
+    export class Settings {
         imagePath: string;
         questionText: {[questionText: string]: IQuestionText};
-        categories: ICategory[];
-        categorySets: ICategorySet[];
-    }
+        categories: {[category: string]: ICategory};
+        categorySets: {[categorySet: string]: ICategory};
 
-    export function getSettings(): Promise<ISettings> {
-        let promise = new Promise((resolve: Function, reject: Function) => {
-            $.get('config/settings.json', '', (settingsJson) => {
-                resolve(settingsJson);
-            })
-            .fail(() => {
-                reject('Failed to load settings json.');
+        public getCategoriesFromSet(set: ICategorySet): ICategory[] {
+            let categorySet: ICategory[];
+            for (let category in this.categories) {
+                
+            }
+            return categorySet
+        }
+
+        public static GetSettings(): Promise<Settings> {
+            let promise = new Promise((resolve: Function, reject: Function) => {
+                $.get('config/settings.json', '', (settingsJson) => {
+                    resolve(settingsJson);
+                })
+                .fail(() => {
+                    reject('Failed to load settings json.');
+                });
             });
-        });
-        return promise;
+            return promise;
+        }
     }
 }

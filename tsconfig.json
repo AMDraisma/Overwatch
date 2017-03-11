@@ -6,6 +6,6 @@
         "sourceMap": true
     },
     "include": [
-        "wwwroot/js/*.ts"
+        "src/js/*.ts"
     ]
 }

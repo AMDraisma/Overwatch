@@ -3,6 +3,8 @@ var runSequence = require('run-sequence');
 var minify = require('gulp-minify');
 var inject = require('gulp-inject');
 var typescript = require('gulp-tsc');
+var sourcemaps = require('gulp-sourcemaps');
+
 
 var wwwroot = './wwwroot'
 var libs = '{bootstrap,jquery}'
@@ -34,7 +36,7 @@ gulp.task('tsc', (cb) => {
             "noimplicitany": true,
             "sourcemap": false
         }))
-        .pipe(gulp.dest(`${wwwroot}/js`))
+        .pipe(gulp.dest(`${wwwroot}/js`));
     cb();
 });
 
@@ -47,7 +49,7 @@ gulp.task('insertjs', function(cb){
                 relative:true
             }
         ))
-        .pipe(gulp.dest(wwwroot))
+        .pipe(gulp.dest(wwwroot));
     cb();
 });
 
@@ -59,22 +61,10 @@ gulp.task('insertcss', function(cb){
                 relative:true
             }
         ))
-        .pipe(gulp.dest(wwwroot))
+        .pipe(gulp.dest(wwwroot));
     cb();
 });
 
-gulp.task('deployprod', () => {
+gulp.task('deploy', () => {
     runSequence('npm:copy', 'ow:copy', 'tsc', 'insertjs', 'insertcss');
-});
-
-gulp.task('deploydev', (cb) => {
-    gulp.src([`src/js/*.ts`])
-        .pipe(typescript({
-            "module": "commonjs",
-            "target": "ES6",
-            "noimplicitany": true,
-            "sourcemap": true
-        }))
-        .pipe(gulp.dest(`src/js`))
-    cb();
 });

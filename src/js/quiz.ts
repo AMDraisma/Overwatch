@@ -33,8 +33,6 @@ namespace quiz{
 
             GameMaster.FillQuestion(q.hero, category.path, q);
             
-            console.log(q);
-            
             return q;
         }
 

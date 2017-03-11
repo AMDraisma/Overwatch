@@ -30,6 +30,7 @@
             }
         ],
         "name": "Genji",
+        "totalhealth": "200",
         "armor": "0",
         "role": "Offense",
         "health": "200",
@@ -67,6 +68,7 @@
             }
         ],
         "name": "McCree",
+        "totalhealth": "200",
         "armor": "0",
         "role": "Offense",
         "health": "200",
@@ -102,6 +104,7 @@
             }
         ],
         "name": "Pharah",
+        "totalhealth": "200",
         "armor": "0",
         "role": "Offense",
         "health": "200",
@@ -137,6 +140,7 @@
             }
         ],
         "name": "Reaper",
+        "totalhealth": "250",
         "armor": "0",
         "role": "Offense",
         "health": "250",
@@ -180,6 +184,7 @@
             }
         ],
         "name": "Soldier 76",
+        "totalhealth": "200",
         "armor": "0",
         "role": "Offense",
         "health": "200",
@@ -222,6 +227,7 @@
             }
         ],
         "name": "Sombra",
+        "totalhealth": "200",
         "armor": "0",
         "role": "Offense",
         "health": "200",
@@ -257,6 +263,7 @@
             }
         ],
         "name": "Tracer",
+        "totalhealth": "150",
         "armor": "0",
         "role": "Offense",
         "health": "150",
@@ -297,6 +304,7 @@
             }
         ],
         "name": "Bastion",
+        "totalhealth": "300",
         "armor": "100",
         "role": "Defense",
         "health": "200",
@@ -334,6 +342,7 @@
             }
         ],
         "name": "Hanzo",
+        "totalhealth": "200",
         "armor": "0",
         "role": "Defense",
         "health": "200",
@@ -374,6 +383,7 @@
             }
         ],
         "name": "Junkrat",
+        "totalhealth": "200",
         "armor": "0",
         "role": "Defense",
         "health": "200",
@@ -409,6 +419,7 @@
             }
         ],
         "name": "Mei",
+        "totalhealth": "250",
         "armor": "0",
         "role": "Defense",
         "health": "250",
@@ -445,6 +456,7 @@
             }
         ],
         "name": "torbjorn",
+        "totalhealth": "200",
         "armor": "0",
         "role": "Defense",
         "health": "200",
@@ -481,6 +493,7 @@
             }
         ],
         "name": "Widowmaker",
+        "totalhealth": "200",
         "armor": "0",
         "role": "Defense",
         "health": "200",
@@ -502,6 +515,7 @@
             }
         ],
         "name": "D.Va pilot",
+        "totalhealth": "150",
         "armor": "0",
         "role": "Tank",
         "health": "150",
@@ -535,6 +549,7 @@
             }
         ],
         "name": "D.Va mech",
+        "totalhealth": "600",
         "armor": "400",
         "role": "Tank",
         "health": "200",
@@ -573,6 +588,7 @@
             }
         ],
         "name": "Reinhardt",
+        "totalhealth": "500",
         "armor": "200",
         "role": "Tank",
         "health": "300",
@@ -610,6 +626,7 @@
             }
         ],
         "name": "Roadhog",
+        "totalhealth": "600",
         "armor": "0",
         "role": "Tank",
         "health": "600",
@@ -645,6 +662,7 @@
             }
         ],
         "name": "Winston",
+        "totalhealth": "500",
         "armor": "100",
         "role": "Tank",
         "health": "400",
@@ -680,6 +698,7 @@
             }
         ],
         "name": "Zarya",
+        "totalhealth": "400",
         "armor": "0",
         "role": "Tank",
         "health": "200",
@@ -715,6 +734,7 @@
             }
         ],
         "name": "Ana",
+        "totalhealth": "200",
         "armor": "0",
         "role": "Support",
         "health": "200",
@@ -748,6 +768,7 @@
             }
         ],
         "name": "Lúcio",
+        "totalhealth": "200",
         "armor": "0",
         "role": "Support",
         "health": "200",
@@ -786,6 +807,7 @@
             }
         ],
         "name": "Mercy",
+        "totalhealth": "200",
         "armor": "0",
         "role": "Support",
         "health": "200",
@@ -821,6 +843,7 @@
             }
         ],
         "name": "symmetra",
+        "totalhealth": "200",
         "armor": "0",
         "role": "Support",
         "health": "100",
@@ -852,6 +875,7 @@
             }
         ],
         "name": "Zenyatta",
+        "totalhealth": "200",
         "armor": "0",
         "role": "Support",
         "health": "50",

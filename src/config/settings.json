@@ -22,7 +22,7 @@
         },
         {
             "name": "cooldown",
-            "fullName": "Cooldowns",
+            "fullName": "Cooldown",
             "path": "abilities/*/attributes/cooldown",
             "questionTextName": "abilityAttribute"
         },
@@ -48,16 +48,16 @@
 
     "questionText": {
         "abilityAttribute": {
-            "questionHeader": "What is the {attribute} of",
-            "questionFooter": "{hero}'s {ability}?"
+            "questionHeader": "What is the {categoryName} of",
+            "questionFooter": "{hero.name}'s {ability.name}?"
         },
         "abilityEnabled": {
-            "questionHeader": "Are {attribute} enabled on",
-            "questionFooter": "{hero}'s {ability}?"
+            "questionHeader": "Are {categoryName} enabled on",
+            "questionFooter": "{hero.name}'s {ability.name}?"
         },
         "heroAttribute": {
-            "questionHeader": "What is the {attribute} of",
-            "questionFooter": "{hero}?"
+            "questionHeader": "What is the {categoryName} of",
+            "questionFooter": "{hero.name}?"
         }
     },
 

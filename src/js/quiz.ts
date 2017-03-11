@@ -12,7 +12,6 @@ namespace quiz{
         public categoryName: string;
         public text: IQuestionText;
         public hero: IHero;
-        public attribute: string;
         public ability: IAbility;
         public abilityAttribute: {[value: string]: string};
         public answer: any;
@@ -116,7 +115,6 @@ namespace quiz{
                     return GameMaster.FillQuestion(subSelection, splitpath[1], question);
                 }
             }else{
-                question.attribute = path;
                 question.answer = obj[path];
                 return question;
             }

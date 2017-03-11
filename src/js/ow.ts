@@ -40,9 +40,9 @@ function getQuestionImage(q: quiz.Question): string {
  * @param {quiz.Question} q 
  */
 function displayQuestion(q: quiz.Question, div: HTMLDivElement) {
-    div.innerHTML = `<p>What is the <span class="text-primary">${q.attribute}</span> of</p>`;
-    div.innerHTML += `<img src="${settings.imagePath}/${getQuestionImage(q)}">`;
-    div.innerHTML += `<p><span class="text-primary">${q.hero.name}</span></p>`;
+    div.innerHTML = `<p class="question-text">What is the <span class="text-primary">${q.attribute}</span> of</p>`;
+    div.innerHTML += `<img src="${settings.imagePath}/${getQuestionImage(q)}" class="question-img">`;
+    div.innerHTML += `<p class="question-text"><span class="text-primary">${q.hero.name}</span></p>`;
 }
 
 

@@ -1,7 +1,12 @@
 .question-div {
-    height: 500px;
+    height: auto;
+    width:100%
 }
 
 .question-img {
-    height: fit-content
+    min-height: 200px;
+}
+
+.question-text {
+    font-size: 24pt;
 }

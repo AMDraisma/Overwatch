@@ -25,7 +25,7 @@
         "hsa": {
             "fullName": "Health/Shield/Armor",
             "path": "health|shield|armor",
-            "questionTextName": "heroAttribute"
+            "questionTextName": "HSA"
         },
         "movespeed": {
             "fullName": "Movement speed",
@@ -51,6 +51,10 @@
         "heroAttribute": {
             "questionHeader": "What is the {categoryName} of",
             "questionFooter": "{hero.name}?"
+        },
+        "HSA": {
+            "questionHeader": "How much {attribute} does",
+            "questionFooter": "{hero.name} have?"
         }
     },
 

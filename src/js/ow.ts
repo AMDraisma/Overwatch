@@ -37,6 +37,11 @@ function toggleCategory(categoryName: string) {
     }
 }
 
+function refresh() {
+    let q: quiz.Question = gameMaster.GenerateQuestion();
+    displayQuestion(q, questionDiv);
+}
+
 
 $(document).ready(() => {
     questionDiv = (document.getElementById('questionDiv') as HTMLDivElement);
@@ -64,8 +69,8 @@ $(document).ready(() => {
         heroData = data;
         gameMaster = new quiz.GameMaster(heroData, enabledCategories, questionTypes);
     })
+    // generate new question and display
     .then(() => {
-        let q: quiz.Question = gameMaster.GenerateQuestion();
-        displayQuestion(q, questionDiv);
+        refresh();
     });
 });

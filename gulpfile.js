@@ -21,6 +21,8 @@ gulp.task('npm:copy', (cb) => {
 gulp.task('ow:copy', (cb) => {
     gulp.src(['src/*.html'], {base: 'src'})
         .pipe(gulp.dest(`${wwwroot}`));
+    gulp.src(['src/css/*.css'], {base: 'src'})
+        .pipe(gulp.dest(`${wwwroot}`));
     gulp.src(['src/config/*'], {base: 'src'})
         .pipe(gulp.dest(`${wwwroot}`));
     cb();
@@ -55,7 +57,7 @@ gulp.task('insertjs', function(cb){
 
 gulp.task('insertcss', function(cb){
     return gulp.src(`${wwwroot}/index.html`)
-        .pipe(inject(gulp.src([`${wwwroot}/lib/*/**/*.css`], {base: wwwroot}), {
+        .pipe(inject(gulp.src([`${wwwroot}/lib/*/**/*.css`, `${wwwroot}/css/*.css`], {base: wwwroot}), {
                 starttag: '<!-- gulp:css -->',
                 endtag: '<!-- endgulp -->',
                 relative:true

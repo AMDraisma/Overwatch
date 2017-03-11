@@ -1,10 +1,12 @@
 /// <reference path="_reference.ts" />
 
-let settings: quiz.ISettings;
+let settings: quiz.Settings;
 
 let gameMaster: quiz.GameMaster;
 
 let questionDiv: HTMLDivElement;
+
+let enabledCategories: quiz.ICategory[];
 
 /**
  * Displays the question 
@@ -17,18 +19,29 @@ function displayQuestion(q: quiz.Question, div: HTMLDivElement) {
     div.innerHTML += `<p class="question-text">${quiz.Question.ParseQuestionText(q, q.text.questionFooter)}</p>`;
 }
 
+function populateControls() {
+
+}
+
+function populateCategoryControls() {
+
+}
+
+function populateCategoryGroupControls() {
+
+}
+
 
 $(document).ready(() => {
     questionDiv = (document.getElementById('questionDiv') as HTMLDivElement);
 
     let heroData: quiz.IHero[];
     let questionTypes: {[questionType: string]: quiz.IQuestionText}
-    let enabledCategories: quiz.ICategory[];
 
-    quiz.getSettings()
-    .then((data: quiz.ISettings) => {
-        settings = data;
-        enabledCategories = [settings.categories[3]];
+    quiz.Settings.GetSettings()
+    .then((data: quiz.Settings) => {
+        settings = new quiz.Settings(data);
+        enabledCategories = settings.getCategoryListFromSet(settings.categorySets['Default'])
         questionTypes = settings.questionText;
     })
     .then(quiz.getHeroData)

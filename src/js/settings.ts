@@ -23,18 +23,32 @@ namespace quiz {
         categories: string[];
     }
 
-    export class Settings {
+    export interface ISettings {
         imagePath: string;
         questionText: {[questionText: string]: IQuestionText};
         categories: {[category: string]: ICategory};
-        categorySets: {[categorySet: string]: ICategory};
+        categorySets: {[categorySet: string]: ICategorySet};
+    }
 
-        public getCategoriesFromSet(set: ICategorySet): ICategory[] {
-            let categorySet: ICategory[];
-            for (let category in this.categories) {
-                
+    export class Settings implements ISettings{
+        imagePath: string;
+        questionText: {[questionText: string]: IQuestionText};
+        categories: {[category: string]: ICategory};
+        categorySets: {[categorySet: string]: ICategorySet};
+
+        public constructor(settings: ISettings) {
+            Object.assign(this, settings);
+        }
+
+        public getCategoryListFromSet(set: ICategorySet): ICategory[] {
+            let categoryList: ICategory[] = [];
+            for (var category in set.categories) {
+                category = set.categories[category];
+                if (category in this.categories) {
+                    categoryList.push(this.categories[category]);
+                }
             }
-            return categorySet
+            return categoryList;
         }
 
         public static GetSettings(): Promise<Settings> {

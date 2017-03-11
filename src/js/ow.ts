@@ -1,10 +1,8 @@
 /// <reference path="_reference.ts" />
 
 let settings: quiz.ISettings;
-let heroData: quiz.IHero[];
-let questionTypes: {[questionType: string]: quiz.IQuestionType}
 
-let enabledCategories: quiz.ICategory[];
+let gameMaster: quiz.GameMaster;
 
 let questionDiv: HTMLDivElement;
 
@@ -49,18 +47,23 @@ function displayQuestion(q: quiz.Question, div: HTMLDivElement) {
 $(document).ready(() => {
     questionDiv = (document.getElementById('questionDiv') as HTMLDivElement);
 
+    let heroData: quiz.IHero[];
+    let questionTypes: {[questionType: string]: quiz.IQuestionType}
+    let enabledCategories: quiz.ICategory[];
+
     quiz.getSettings()
     .then((data: quiz.ISettings) => {
         settings = data;
-        enabledCategories = [settings.categories[2]];
+        enabledCategories = [settings.categories[1]];
         questionTypes = settings.questionTypes;
     })
     .then(quiz.getHeroData)
     .then((data: quiz.IHero[]) => {
         heroData = data;
-
-        let q: quiz.Question = quiz.GameMaster.GenerateQuestion(heroData, enabledCategories);
+        gameMaster = new quiz.GameMaster(heroData, enabledCategories, questionTypes);
+    })
+    .then(() => {
+        let q: quiz.Question = gameMaster.GenerateQuestion();
         displayQuestion(q, questionDiv);
     });
-    
 });

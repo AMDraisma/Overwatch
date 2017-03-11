@@ -28,13 +28,31 @@ namespace quiz{
      * @class GameMaster
      */
     export class GameMaster {
-        public static GenerateQuestion(heroes: IHero[], categories: ICategory[]): Question {
+        private heroes: IHero[];
+        private categories: ICategory[];
+        private questionTypes: {[questionType: string]: IQuestionType};
+
+        public constructor(
+            heroes: IHero[],
+            categories: ICategory[],
+            questionTypes: {[questionType: string]: IQuestionType}
+        ) {
+            this.heroes = heroes;
+            this.categories = categories;
+            this.questionTypes = questionTypes;
+        }
+
+        public GenerateQuestion(): Question {
             let q: Question = new Question();
 
-            q.hero = GameMaster.PickRandom<IHero>(heroes);
-            let category: ICategory = GameMaster.PickRandom<ICategory>(categories);
+            q.hero = GameMaster.PickRandom<IHero>(this.heroes);
+            let category: ICategory = GameMaster.PickRandom<ICategory>(this.categories);
+            q.type = this.questionTypes[category.questionTypeName];
+
             GameMaster.FillQuestion(q.hero, category.path, q);
+            
             console.log(q);
+            
             return q;
         }
 

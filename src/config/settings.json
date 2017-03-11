@@ -18,7 +18,7 @@
             "name": "headshots",
             "fullName": "Headshots",
             "path": "abilities/*/attributes/headshots",
-            "questionType": "abilityAttribute"
+            "questionType": "abilityEnabled"
         },
         {
             "name": "cooldown",
@@ -50,6 +50,11 @@
         {
             "name": "abilityAttribute",
             "questionHeader": "What is the {} of",
+            "questionFooter": "{}'s {}?"
+        },
+        {
+            "name": "abilityEnabled",
+            "questionHeader": "Are {} enabled on",
             "questionFooter": "{}'s {}?"
         },
         {

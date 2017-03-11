@@ -20,6 +20,7 @@ namespace quiz {
     }
 
     export interface ICategorySet {
+        display: boolean;
         categories: string[];
     }
 

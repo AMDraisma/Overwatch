@@ -48,16 +48,16 @@
 
     "questionTypes": {
         "abilityAttribute": {
-            "questionHeader": "What is the {} of",
-            "questionFooter": "{}'s {}?"
+            "questionHeader": "What is the {attribute} of",
+            "questionFooter": "{hero}'s {ability}?"
         },
         "abilityEnabled": {
-            "questionHeader": "Are {} enabled on",
-            "questionFooter": "{}'s {}?"
+            "questionHeader": "Are {attribute} enabled on",
+            "questionFooter": "{hero}'s {ability}?"
         },
         "heroAttribute": {
-            "questionHeader": "What is the {} of",
-            "questionFooter": "{}?"
+            "questionHeader": "What is the {attribute} of",
+            "questionFooter": "{hero}?"
         }
     },
 

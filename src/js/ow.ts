@@ -2,7 +2,7 @@
 
 let settings: quiz.ISettings;
 let heroData: quiz.IHero[];
-let questionFormat: quiz.IQuestionType[];
+let questionTypes: {[questionType: string]: quiz.IQuestionType}
 
 let enabledCategories: quiz.ICategory[];
 
@@ -53,6 +53,7 @@ $(document).ready(() => {
     .then((data: quiz.ISettings) => {
         settings = data;
         enabledCategories = [settings.categories[2]];
+        questionTypes = settings.questionTypes;
     })
     .then(quiz.getHeroData)
     .then((data: quiz.IHero[]) => {

@@ -46,23 +46,20 @@
         }
     ],
 
-    "questionTypes": [
-        {
-            "name": "abilityAttribute",
+    "questionTypes": {
+        "abilityAttribute": {
             "questionHeader": "What is the {} of",
             "questionFooter": "{}'s {}?"
         },
-        {
-            "name": "abilityEnabled",
+        "abilityEnabled": {
             "questionHeader": "Are {} enabled on",
             "questionFooter": "{}'s {}?"
         },
-        {
-            "name": "heroAttribute",
+        "heroAttribute": {
             "questionHeader": "What is the {} of",
             "questionFooter": "{}?"
         }
-    ],
+    },
 
     "categorySets": [
         {

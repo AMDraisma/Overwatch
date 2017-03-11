@@ -14,7 +14,7 @@ namespace quiz {
 
     export interface ISettings {
         imagePath: string;
-
+        questionTypes: {[questionType: string]: IQuestionType};
         categories: ICategory[];
         categorySets: ICategorySet[];
     }

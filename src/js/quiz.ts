@@ -9,12 +9,13 @@ namespace quiz{
      * @class Question
      */
     export class Question {
-        public type: IQuestionType;
+        public text: IQuestionText;
         public hero: IHero;
         public attribute: string;
         public ability: IAbility;
         public abilityAttribute: {[value: string]: string};
         public answer: any;
+        [attribute: string]: any;
 
         public getIsAbility(): boolean {
             return this.ability !== undefined;
@@ -30,16 +31,16 @@ namespace quiz{
     export class GameMaster {
         private heroes: IHero[];
         private categories: ICategory[];
-        private questionTypes: {[questionType: string]: IQuestionType};
+        private questionText: {[questionText: string]: IQuestionText};
 
         public constructor(
             heroes: IHero[],
             categories: ICategory[],
-            questionTypes: {[questionType: string]: IQuestionType}
+            questionTypes: {[questionText: string]: IQuestionText}
         ) {
             this.heroes = heroes;
             this.categories = categories;
-            this.questionTypes = questionTypes;
+            this.questionText = questionTypes;
         }
 
         public GenerateQuestion(): Question {
@@ -47,7 +48,7 @@ namespace quiz{
 
             q.hero = GameMaster.PickRandom<IHero>(this.heroes);
             let category: ICategory = GameMaster.PickRandom<ICategory>(this.categories);
-            q.type = this.questionTypes[category.questionTypeName];
+            q.text = this.questionText[category.questionTextName];
 
             GameMaster.FillQuestion(q.hero, category.path, q);
             

@@ -6,47 +6,47 @@
             "name": "roles",
             "fullName": "Hero role",
             "path": "role",
-            "questionTypeName": "heroAttribute"
+            "questionTextName": "heroAttribute"
         },
         {
             "name": "totalhealth",
             "fullName": "Total health",
             "path": "totalhealth",
-            "questionTypeName": "heroAttribute"
+            "questionTextName": "heroAttribute"
         },
         {
             "name": "headshots",
             "fullName": "Headshots",
             "path": "abilities/*/attributes/headshots",
-            "questionTypeName": "abilityEnabled"
+            "questionTextName": "abilityEnabled"
         },
         {
             "name": "cooldown",
             "fullName": "Cooldowns",
             "path": "abilities/*/attributes/cooldown",
-            "questionTypeName": "abilityAttribute"
+            "questionTextName": "abilityAttribute"
         },
         {
             "name": "hsa",
             "fullName": "Health/Shield/Armor",
             "path": "health|shield|armor",
-            "questionTypeName": "heroAttribute"
+            "questionTextName": "heroAttribute"
         },
         {
             "name": "movespeed",
             "fullName": "Movement speed",
             "path": "movespeed",
-            "questionTypeName": "heroAttribute"
+            "questionTextName": "heroAttribute"
         },
         {
             "name": "casttime",
             "fullName": "Cast time",
             "path": "abilities/*/attributes/casttime",
-            "questionTypeName": "abilityAttribute"
+            "questionTextName": "abilityAttribute"
         }
     ],
 
-    "questionTypes": {
+    "questionText": {
         "abilityAttribute": {
             "questionHeader": "What is the {attribute} of",
             "questionFooter": "{hero}'s {ability}?"

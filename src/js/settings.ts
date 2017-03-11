@@ -7,7 +7,7 @@ namespace quiz {
      * @export
      * @interface IQuestionType
      */
-    export interface IQuestionType {
+    export interface IQuestionText {
         name: string;
         questionHeader: string;
         questionFooter: string;
@@ -17,7 +17,7 @@ namespace quiz {
         name: string;
         fullName: string;
         path: string;
-        questionTypeName: string
+        questionTextName: string
     }
 
     export interface ICategorySet {
@@ -27,7 +27,7 @@ namespace quiz {
 
     export interface ISettings {
         imagePath: string;
-        questionTypes: {[questionType: string]: IQuestionType};
+        questionText: {[questionText: string]: IQuestionText};
         categories: ICategory[];
         categorySets: ICategorySet[];
     }

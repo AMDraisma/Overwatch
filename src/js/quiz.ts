@@ -3,26 +3,6 @@
 namespace quiz{
 
     /**
-     * Question class, holding names of atrributes/abilities and answers
-     * 
-     * @export
-     * @class Question
-     */
-    export class Question {
-        public categoryName: string;
-        public text: IQuestionText;
-        public hero: IHero;
-        public ability: IAbility;
-        public abilityAttribute: {[value: string]: string};
-        public answer: any;
-        [attribute: string]: any;
-
-        public getIsAbility(): boolean {
-            return this.ability !== undefined;
-        }
-    }
-
-    /**
      * Gamemaster handles generation of questions
      * 
      * @export

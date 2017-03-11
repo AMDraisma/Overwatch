@@ -3,7 +3,7 @@ wwwroot/*
 
 # generated JS
 src/js/*.js*
-!src/js/*.old.js
+
 
 # dependencies
 typings/*

@@ -17,5 +17,6 @@ The index.html should contain includes for dependencies which get replaced when 
 
 ## Deploying
 1. Make sure all dependencies have been installed
-2. Edit the 
+2. Edit the gulpfile.js & change wwwroot to something of your liking
 3. run ```gulp deployprod```
+4. edit the settings.json in wwwroot/config

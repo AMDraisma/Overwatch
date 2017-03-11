@@ -2,36 +2,64 @@
 
 let settings: quiz.ISettings;
 let heroData: quiz.IHero[];
+let questionFormat: quiz.IQuestionType[];
 
 let enabledCategories: quiz.ICategory[];
 
-let questionHeader: HTMLElement = document.getElementById('qheader');
-let questionFooter: HTMLElement = document.getElementById('qfooter');
+let questionDiv: HTMLDivElement;
 
-let questionImage: HTMLElement = document.getElementById('qimg');
+/**
+ * reduces hero or ability name to fit image filenames
+ * 
+ * @param {string} name name of hero or ability
+ * @returns {string} 
+ */
+function reduceName(name: string): string {
+    return name.replace(' ', '-').replace('.', '').toLowerCase();
+}
 
-function displayQuestion(q: quiz.Question) {
-    questionHeader.innerHTML = `<p>What is the <span class="text-primary">${q.attribute}</span> of</p>`;
 
-    let heroImageName = q.hero.name.replace(' ', '-').toLowerCase();
-    questionImage.setAttribute('src', `${settings.imagePath}/${heroImageName}.png`);
+/**
+ * generates name of image for hero or ability
+ * 
+ * @param {quiz.Question} q question
+ * @returns {string} 
+ */
+function getQuestionImage(q: quiz.Question): string {
+    let heroName: string = reduceName(q.hero.name);
+    if (q.getIsAbility()) {
+        return `${heroName}-ability-${reduceName(q.ability.name)}.png`;
+    }else{
+        return `${heroName}.png`;
+    }
+}
 
-    questionFooter.innerHTML = `<p><span class="text-primary">${q.hero.name}</span></p>`
+/**
+ * Displays the question 
+ * 
+ * @param {quiz.Question} q 
+ */
+function displayQuestion(q: quiz.Question, div: HTMLDivElement) {
+    div.innerHTML = `<p>What is the <span class="text-primary">${q.attribute}</span> of</p>`;
+    div.innerHTML += `<img src="${settings.imagePath}/${getQuestionImage(q)}">`;
+    div.innerHTML += `<p><span class="text-primary">${q.hero.name}</span></p>`;
 }
 
 
 $(document).ready(() => {
+    questionDiv = (document.getElementById('questionDiv') as HTMLDivElement);
+
     quiz.getSettings()
     .then((data: quiz.ISettings) => {
         settings = data;
-        enabledCategories = [settings.categories[1]];
+        enabledCategories = [settings.categories[2]];
     })
     .then(quiz.getHeroData)
     .then((data: quiz.IHero[]) => {
         heroData = data;
 
         let q: quiz.Question = quiz.GameMaster.GenerateQuestion(heroData, enabledCategories);
-        // displayQuestion(q);
+        displayQuestion(q, questionDiv);
     });
     
 });

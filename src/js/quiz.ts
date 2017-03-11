@@ -10,24 +10,21 @@ namespace quiz{
      */
     export class GameMaster {
         private heroes: IHero[];
-        private categories: {[category: string]: quiz.ICategory};
         private questionText: {[questionText: string]: IQuestionText};
 
         public constructor(
             heroes: IHero[],
-            categories: {[category: string]: quiz.ICategory},
             questionTypes: {[questionText: string]: IQuestionText}
         ) {
             this.heroes = heroes;
-            this.categories = categories;
             this.questionText = questionTypes;
         }
 
-        public GenerateQuestion(): Question {
+        public GenerateQuestion(categories: {[category: string]: quiz.ICategory}): Question {
             let q: Question = new Question();
 
             q.hero = GameMaster.PickRandom<IHero>(this.heroes);
-            let category: ICategory = GameMaster.PickRandomProperty<ICategory>(this.categories);
+            let category: ICategory = GameMaster.PickRandomProperty<ICategory>(categories);
             q.categoryName = category.fullName;
             q.text = this.questionText[category.questionTextName];
 
@@ -115,10 +112,6 @@ namespace quiz{
         private static PickRandomProperty<T>(object: {[index: string]: T}): T {
             let keys = Object.keys(object);
             return object[keys[Math.random() * keys.length << 0]]
-        }
-
-        public setCategories(categories: {[category: string]: ICategory}) {
-            this.categories = categories;
         }
     }
 }

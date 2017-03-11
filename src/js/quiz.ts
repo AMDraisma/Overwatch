@@ -39,37 +39,6 @@ namespace quiz{
         }
 
         /**
-         * picks a random element T from an array of T elements
-         * 
-         * @private
-         * @static
-         * @template T 
-         * @param {T[]} arr array of elements T
-         * @returns {T} random element T
-         * 
-         * @memberOf GameMaster
-         */
-        private static PickRandom<T>(arr: T[]): T {
-            return arr[Math.random()*arr.length << 0];
-        }
-
-        /**
-         * Picks a random property from an object
-         * 
-         * @private
-         * @static
-         * @template T 
-         * @param {{[index: string]: T}} object 
-         * @returns {T} 
-         * 
-         * @memberOf GameMaster
-         */
-        private static PickRandomProperty<T>(object: {[index: string]: T}): T {
-            let keys = Object.keys(object);
-            return object[keys[Math.random() * keys.length << 0]]
-        }
-
-        /**
          * Takes a question and fills it with answer, attribute, ability etc based on path defined
          * in settings.json
          * 
@@ -105,15 +74,49 @@ namespace quiz{
                     question.ability = subSelection;
                     return question;
                 }
-                if (splitpath[0].indexOf('|') !== -1) {
-                    let choice = GameMaster.PickRandom<string>(splitpath[0].split('|'))
-                    let subSelection = obj[choice];
-                    return GameMaster.FillQuestion(subSelection, splitpath[1], question);
-                }
             }else{
-                question.answer = obj[path];
+                // for now we mandate that | can only be used at leaves.
+                if (path.indexOf('|') !== -1) {
+                    let choice = GameMaster.PickRandom<string>(path.split('|'))
+                    question.attribute = choice;
+                    question.answer = obj[choice];
+                }else{
+                    question.attribute = path;
+                    question.answer = obj[path];
+                }
                 return question;
             }
+        }
+
+        /**
+         * picks a random element T from an array of T elements
+         * 
+         * @private
+         * @static
+         * @template T 
+         * @param {T[]} arr array of elements T
+         * @returns {T} random element T
+         * 
+         * @memberOf GameMaster
+         */
+        private static PickRandom<T>(arr: T[]): T {
+            return arr[Math.random()*arr.length << 0];
+        }
+
+        /**
+         * Picks a random property from an object
+         * 
+         * @private
+         * @static
+         * @template T 
+         * @param {{[index: string]: T}} object 
+         * @returns {T} 
+         * 
+         * @memberOf GameMaster
+         */
+        private static PickRandomProperty<T>(object: {[index: string]: T}): T {
+            let keys = Object.keys(object);
+            return object[keys[Math.random() * keys.length << 0]]
         }
 
         public setCategories(categories: {[category: string]: ICategory}) {

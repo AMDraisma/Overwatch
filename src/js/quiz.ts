@@ -5,7 +5,14 @@ namespace quiz{
         heroes: IHero[];
     }
 
+    export interface IQuestionType {
+        name: string;
+        questionHeader: string;
+        questionFooter: string;
+    }
+
     export class Question {
+        public type: IQuestionType;
         public hero: IHero;
         public attribute: string;
         public ability: IAbility;
@@ -13,19 +20,17 @@ namespace quiz{
         public answer: any;
 
         public getIsAbility(): boolean {
-            return !this.ability === undefined;
+            return this.ability !== undefined;
         }
     }
 
-    export class GameMaster {
+    export class GameMaster {        
         public static GenerateQuestion(heroes: IHero[], categories: ICategory[]): Question {
             let q: Question = new Question();
 
             q.hero = GameMaster.PickRandom<IHero>(heroes);
             let category: ICategory = GameMaster.PickRandom<ICategory>(categories);
-            let qa: string[] = GameMaster.PickFromPath(q.hero, category.path);
-            q.attribute = qa[0];
-            q.answer = qa[1];
+            GameMaster.FillQuestion(q.hero, category.path, q);
             console.log(q);
             return q;
         }
@@ -34,7 +39,7 @@ namespace quiz{
             return arr[Math.floor(Math.random()*arr.length)];
         }
 
-        private static PickFromPath(obj: any, path: string, result: string[] = []): string[] {
+        private static FillQuestion(obj: any, path: string, question: Question): Question {
             let splitpath: string[] = [];
             let i: number = path.indexOf('/');
 
@@ -43,26 +48,29 @@ namespace quiz{
                 splitpath[1] = path.substr(i+1);
 
                 if (splitpath[0] in obj) {
-                    return GameMaster.PickFromPath(obj[splitpath[0]], splitpath[1]);
+                    return GameMaster.FillQuestion(obj[splitpath[0]], splitpath[1], question);
                 }
                 if (splitpath[0] === '*') {
                     let subSelection: any
-                    let answer: any;
+                    let t: number = 0;
                     // TODO: dear god think of something better
-                    while (answer === undefined) {
+                    while (question.answer === undefined && t < 10) {
+                        t+=1;
                         subSelection = GameMaster.PickRandom<any>(obj)
-                        result = GameMaster.PickFromPath(subSelection, splitpath[1]);
+                        GameMaster.FillQuestion(subSelection, splitpath[1], question);
                     }
-                    result[0] = subSelection.name;
-                    return result;
+                    question.ability = subSelection;
+                    return question;
                 }
                 if (splitpath[0].indexOf('|') !== -1) {
                     let choice = GameMaster.PickRandom<string>(splitpath[0].split('|'))
                     let subSelection = obj[choice];
-                    return GameMaster.PickFromPath(subSelection, splitpath[1]);
+                    return GameMaster.FillQuestion(subSelection, splitpath[1], question);
                 }
             }else{
-                return [path, obj[path]];
+                question.attribute = path;
+                question.answer = obj[path];
+                return question;
             }
         }
     }

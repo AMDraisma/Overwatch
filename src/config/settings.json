@@ -6,43 +6,43 @@
             "name": "roles",
             "fullName": "Hero role",
             "path": "role",
-            "questionType": "heroAttribute"
+            "questionTypeName": "heroAttribute"
         },
         {
             "name": "totalhealth",
             "fullName": "Total health",
             "path": "totalhealth",
-            "questionType": "heroAttribute"
+            "questionTypeName": "heroAttribute"
         },
         {
             "name": "headshots",
             "fullName": "Headshots",
             "path": "abilities/*/attributes/headshots",
-            "questionType": "abilityEnabled"
+            "questionTypeName": "abilityEnabled"
         },
         {
             "name": "cooldown",
             "fullName": "Cooldowns",
             "path": "abilities/*/attributes/cooldown",
-            "questionType": "abilityAttribute"
+            "questionTypeName": "abilityAttribute"
         },
         {
             "name": "hsa",
             "fullName": "Health/Shield/Armor",
             "path": "health|shield|armor",
-            "questionType": "heroAttribute"
+            "questionTypeName": "heroAttribute"
         },
         {
             "name": "movespeed",
             "fullName": "Movement speed",
             "path": "movespeed",
-            "questionType": "heroAttribute"
+            "questionTypeName": "heroAttribute"
         },
         {
             "name": "casttime",
             "fullName": "Cast time",
             "path": "abilities/*/attributes/casttime",
-            "questionType": "abilityAttribute"
+            "questionTypeName": "abilityAttribute"
         }
     ],
 

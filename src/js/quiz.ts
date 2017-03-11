@@ -10,12 +10,12 @@ namespace quiz{
      */
     export class GameMaster {
         private heroes: IHero[];
-        private categories: ICategory[];
+        private categories: {[category: string]: quiz.ICategory};
         private questionText: {[questionText: string]: IQuestionText};
 
         public constructor(
             heroes: IHero[],
-            categories: ICategory[],
+            categories: {[category: string]: quiz.ICategory},
             questionTypes: {[questionText: string]: IQuestionText}
         ) {
             this.heroes = heroes;
@@ -27,7 +27,7 @@ namespace quiz{
             let q: Question = new Question();
 
             q.hero = GameMaster.PickRandom<IHero>(this.heroes);
-            let category: ICategory = GameMaster.PickRandom<ICategory>(this.categories);
+            let category: ICategory = GameMaster.PickRandomProperty<ICategory>(this.categories);
             q.categoryName = category.fullName;
             q.text = this.questionText[category.questionTextName];
 
@@ -50,7 +50,23 @@ namespace quiz{
          * @memberOf GameMaster
          */
         private static PickRandom<T>(arr: T[]): T {
-            return arr[Math.floor(Math.random()*arr.length)];
+            return arr[Math.random()*arr.length << 0];
+        }
+
+        /**
+         * Picks a random property from an object
+         * 
+         * @private
+         * @static
+         * @template T 
+         * @param {{[index: string]: T}} object 
+         * @returns {T} 
+         * 
+         * @memberOf GameMaster
+         */
+        private static PickRandomProperty<T>(object: {[index: string]: T}): T {
+            let keys = Object.keys(object);
+            return object[keys[Math.random() * keys.length << 0]]
         }
 
         /**
@@ -98,6 +114,10 @@ namespace quiz{
                 question.answer = obj[path];
                 return question;
             }
+        }
+
+        public setCategories(categories: {[category: string]: ICategory}) {
+            this.categories = categories;
         }
     }
 }

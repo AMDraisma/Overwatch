@@ -5,8 +5,10 @@ let settings: quiz.Settings;
 let gameMaster: quiz.GameMaster;
 
 let questionDiv: HTMLDivElement;
+let categorySetDiv: HTMLDivElement;
+let categoryDiv: HTMLDivElement;
 
-let enabledCategories: quiz.ICategory[];
+let enabledCategories: {[category: string]: quiz.ICategory};
 
 /**
  * Displays the question 
@@ -19,31 +21,44 @@ function displayQuestion(q: quiz.Question, div: HTMLDivElement) {
     div.innerHTML += `<p class="question-text">${quiz.Question.ParseQuestionText(q, q.text.questionFooter)}</p>`;
 }
 
-function populateControls() {
+function populateCategoryControls(categories: {[category: string]: quiz.ICategory}, div: HTMLDivElement) {
 
 }
 
-function populateCategoryControls() {
+function populateCategorySetControls(categorySets: {[categorySet: string]: quiz.ICategorySet}, div: HTMLDivElement) {
 
 }
 
-function populateCategoryGroupControls() {
-
+function toggleCategory(categoryName: string) {
+    if (categoryName in enabledCategories) {
+        delete enabledCategories[categoryName];
+    }else{
+        enabledCategories[categoryName] = settings.categories[categoryName];
+    }
 }
 
 
 $(document).ready(() => {
     questionDiv = (document.getElementById('questionDiv') as HTMLDivElement);
+    categorySetDiv = (document.getElementById('categorySetDiv') as HTMLDivElement);
+    categoryDiv = (document.getElementById('categoryDiv') as HTMLDivElement);
 
     let heroData: quiz.IHero[];
     let questionTypes: {[questionType: string]: quiz.IQuestionText}
 
+    // load settings
     quiz.Settings.GetSettings()
     .then((data: quiz.Settings) => {
         settings = new quiz.Settings(data);
-        enabledCategories = settings.getCategoryListFromSet(settings.categorySets['Default'])
+        enabledCategories = settings.getCategoryObjectFromSet(settings.categorySets['Default'])
         questionTypes = settings.questionText;
     })
+    // generate category controls
+    .then(() => {
+        populateCategoryControls(settings.categories, categoryDiv);
+        populateCategorySetControls(settings.categorySets, categoryDiv);
+    })
+    // load hero data
     .then(quiz.getHeroData)
     .then((data: quiz.IHero[]) => {
         heroData = data;

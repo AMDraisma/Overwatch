@@ -40,12 +40,12 @@ namespace quiz {
             Object.assign(this, settings);
         }
 
-        public getCategoryListFromSet(set: ICategorySet): ICategory[] {
-            let categoryList: ICategory[] = [];
+        public getCategoryObjectFromSet(set: ICategorySet): {[category: string]: ICategory} {
+            let categoryList: {[category: string]: ICategory} = {};
             for (var category in set.categories) {
                 category = set.categories[category];
                 if (category in this.categories) {
-                    categoryList.push(this.categories[category]);
+                    categoryList[category] = this.categories[category];
                 }
             }
             return categoryList;

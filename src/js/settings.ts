@@ -1,10 +1,23 @@
 /// <reference path="_reference.ts" />
 
 namespace quiz {
+    /**
+     * Interface for question type, used in question text generation
+     * 
+     * @export
+     * @interface IQuestionType
+     */
+    export interface IQuestionType {
+        name: string;
+        questionHeader: string;
+        questionFooter: string;
+    }
+
     export interface ICategory {
         name: string;
         fullName: string;
         path: string;
+        questionTypeName: string
     }
 
     export interface ICategorySet {

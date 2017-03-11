@@ -1,17 +1,6 @@
 /// <reference path="_reference.ts" />
 
 namespace quiz{
-    /**
-     * Interface for question type, used in question text generation
-     * 
-     * @export
-     * @interface IQuestionType
-     */
-    export interface IQuestionType {
-        name: string;
-        questionHeader: string;
-        questionFooter: string;
-    }
 
     /**
      * Question class, holding names of atrributes/abilities and answers
@@ -38,7 +27,7 @@ namespace quiz{
      * @export
      * @class GameMaster
      */
-    export class GameMaster {        
+    export class GameMaster {
         public static GenerateQuestion(heroes: IHero[], categories: ICategory[]): Question {
             let q: Question = new Question();
 

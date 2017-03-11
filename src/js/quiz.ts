@@ -97,10 +97,10 @@ namespace quiz{
                 }
                 if (splitpath[0] === '*') {
                     let subSelection: any
-                    let t: number = 0;
+                    let t: number = 20;
                     // TODO: dear god think of something better
-                    while (question.answer === undefined && t < 10) {
-                        t+=1;
+                    while (question.answer === undefined && t > 0) {
+                        t-=1;
                         subSelection = GameMaster.PickRandom<any>(obj)
                         GameMaster.FillQuestion(subSelection, splitpath[1], question);
                     }

@@ -9,6 +9,7 @@ namespace quiz{
      * @class Question
      */
     export class Question {
+        public categoryName: string;
         public text: IQuestionText;
         public hero: IHero;
         public attribute: string;
@@ -48,6 +49,7 @@ namespace quiz{
 
             q.hero = GameMaster.PickRandom<IHero>(this.heroes);
             let category: ICategory = GameMaster.PickRandom<ICategory>(this.categories);
+            q.categoryName = category.fullName;
             q.text = this.questionText[category.questionTextName];
 
             GameMaster.FillQuestion(q.hero, category.path, q);

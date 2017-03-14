@@ -15,7 +15,7 @@
             ]
         },
         "totalhealth": {
-            "fullName": "Total health",
+            "fullName": "Total hit points",
             "path": "totalhealth",
             "questionTextName": "heroAttribute",
             "answerType": "numeric",

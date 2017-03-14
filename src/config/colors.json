@@ -1,0 +1,16 @@
+{
+    "attribute": {
+        "health": "#F00",
+        "shield": "#00F",
+        "armor": "#FF0"
+    },
+    "ability": {
+
+    },
+    "ability.attribute": {
+
+    },
+    "hero.name": {
+
+    }
+}

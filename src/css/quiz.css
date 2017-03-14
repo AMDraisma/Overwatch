@@ -14,3 +14,18 @@
 .category-title {
     font-size: 24pt;
 }
+
+.result {
+    font-size: 24pt;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 2s 3s, opacity 2s linear 2s;
+}
+
+.result-correct {
+    background-color: #060;
+}
+
+.result-wrong {
+    background-color: #A00;
+}

@@ -16,7 +16,10 @@ namespace quiz {
     export interface ICategory {
         fullName: string;
         path: string;
-        questionTextName: string
+        questionTextName: string,
+        answerType: string,
+        unit: string,
+        choices: string[]
     }
 
     export interface ICategorySet {

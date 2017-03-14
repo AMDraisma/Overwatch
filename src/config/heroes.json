@@ -3,14 +3,14 @@
         "abilities": [
             {
                 "attributes": {
-                    "headshots": "true"
+                    "headshots": "yes"
                 },
                 "type": "weapon",
                 "name": "Shuriken"
             },
             {
                 "attributes": {
-                    "headshots": "true",
+                    "headshots": "yes",
                     "cooldown": "8"
                 },
                 "type": "ability",
@@ -40,7 +40,7 @@
         "abilities": [
             {
                 "attributes": {
-                    "headshots": "true"
+                    "headshots": "yes"
                 },
                 "type": "weapon",
                 "name": "Peacekeeper"
@@ -61,7 +61,7 @@
             },
             {
                 "attributes": {
-                    "headshots": "false"
+                    "headshots": "no"
                 },
                 "type": "ultimate",
                 "name": "Deadeye"
@@ -78,7 +78,7 @@
         "abilities": [
             {
                 "attributes": {
-                    "headshots": "false"
+                    "headshots": "no"
                 },
                 "type": "weapon",
                 "name": "Rocket Launcher"
@@ -114,7 +114,7 @@
         "abilities": [
             {
                 "attributes": {
-                    "headshots": "true"
+                    "headshots": "yes"
                 },
                 "type": "weapon",
                 "name": "Hellfire Shotguns"
@@ -150,14 +150,14 @@
         "abilities": [
             {
                 "attributes": {
-                    "headshots": "true"
+                    "headshots": "yes"
                 },
                 "type": "weapon",
                 "name": "Heavy Pulse Rifle"
             },
             {
                 "attributes": {
-                    "headshots": "false",
+                    "headshots": "no",
                     "cooldown": "8"
                 },
                 "type": "ability",
@@ -177,7 +177,7 @@
             },
             {
                 "attributes": {
-                    "headshots": "false"
+                    "headshots": "no"
                 },
                 "type": "ultimate",
                 "name": "Tactical Visor"
@@ -194,7 +194,7 @@
         "abilities": [
             {
                 "attributes": {
-                    "headshots": "true"
+                    "headshots": "yes"
                 },
                 "type": "weapon",
                 "name": "Machine Pistol"
@@ -237,7 +237,7 @@
         "abilities": [
             {
                 "attributes": {
-                    "headshots": "true"
+                    "headshots": "yes"
                 },
                 "type": "weapon",
                 "name": "Pulse Pistols"
@@ -273,14 +273,14 @@
         "abilities": [
             {
                 "attributes": {
-                    "headshots": "true"
+                    "headshots": "yes"
                 },
                 "type": "weapon",
                 "name": "Configuration: Recon"
             },
             {
                 "attributes": {
-                    "headshots": "true"
+                    "headshots": "yes"
                 },
                 "type": "weapon",
                 "name": "Configuration Sentry"
@@ -297,7 +297,7 @@
             },
             {
                 "attributes": {
-                    "headshots": "false"
+                    "headshots": "no"
                 },
                 "type": "ultimate",
                 "name": "Configuration: Tank"
@@ -314,14 +314,14 @@
         "abilities": [
             {
                 "attributes": {
-                    "headshots": "true"
+                    "headshots": "yes"
                 },
                 "type": "weapon",
                 "name": "Storm Bow"
             },
             {
                 "attributes": {
-                    "headshots": "true",
+                    "headshots": "yes",
                     "cooldown": "20"
                 },
                 "type": "ability",
@@ -329,7 +329,7 @@
             },
             {
                 "attributes": {
-                    "headshots": "true",
+                    "headshots": "yes",
                     "cooldown": "10"
                 },
                 "type": "ability",
@@ -352,7 +352,7 @@
         "abilities": [
             {
                 "attributes": {
-                    "headshots": "false"
+                    "headshots": "no"
                 },
                 "type": "weapon",
                 "name": "Frag Launcher"
@@ -393,7 +393,7 @@
         "abilities": [
             {
                 "attributes": {
-                    "headshots": "true"
+                    "headshots": "yes"
                 },
                 "type": "weapon",
                 "name": "Endothermic Blaster"
@@ -429,7 +429,7 @@
         "abilities": [
             {
                 "attributes": {
-                    "headshots": "true"
+                    "headshots": "yes"
                 },
                 "type": "weapon",
                 "name": "Rivet gun"
@@ -466,7 +466,7 @@
         "abilities": [
             {
                 "attributes": {
-                    "headshots": "true",
+                    "headshots": "yes",
                     "headshot multiplier": "2.5"
                 },
                 "type": "weapon",
@@ -503,7 +503,7 @@
         "abilities": [
             {
                 "attributes": {
-                    "headshots": "true"
+                    "headshots": "yes"
                 },
                 "type": "weapon",
                 "name": "Light gun"
@@ -525,7 +525,7 @@
         "abilities": [
             {
                 "attributes": {
-                    "headshots": "true"
+                    "headshots": "yes"
                 },
                 "type": "weapon",
                 "name": "Fusion cannons"
@@ -598,7 +598,7 @@
         "abilities": [
             {
                 "attributes": {
-                    "headshots": "true"
+                    "headshots": "yes"
                 },
                 "type": "weapon",
                 "name": "Scrap gun"
@@ -619,7 +619,7 @@
             },
             {
                 "attributes": {
-                    "headshots": "true"
+                    "headshots": "yes"
                 },
                 "type": "ultimate",
                 "name": "Whole hog"
@@ -636,7 +636,7 @@
         "abilities": [
             {
                 "attributes": {
-                    "headshots": "false"
+                    "headshots": "no"
                 },
                 "type": "weapon",
                 "name": "Tesla cannon"
@@ -672,7 +672,7 @@
         "abilities": [
             {
                 "attributes": {
-                    "headshots": "false"
+                    "headshots": "no"
                 },
                 "type": "weapon",
                 "name": "Particle cannon"
@@ -708,7 +708,7 @@
         "abilities": [
             {
                 "attributes": {
-                    "headshots": "false"
+                    "headshots": "no"
                 },
                 "type": "weapon",
                 "name": "Biotic rifle"
@@ -744,7 +744,7 @@
         "abilities": [
             {
                 "attributes": {
-                    "headshots": "true"
+                    "headshots": "yes"
                 },
                 "type": "weapon",
                 "name": "Sonic amplifier"
@@ -783,7 +783,7 @@
             },
             {
                 "attributes": {
-                    "headshots": "true"
+                    "headshots": "yes"
                 },
                 "type": "weapon",
                 "name": "Caduceus blaster"
@@ -817,7 +817,7 @@
         "abilities": [
             {
                 "attributes": {
-                    "headshots": "false"
+                    "headshots": "no"
                 },
                 "type": "weapon",
                 "name": "Photon projector"
@@ -853,7 +853,7 @@
         "abilities": [
             {
                 "attributes": {
-                    "headshots": "true"
+                    "headshots": "yes"
                 },
                 "type": "weapon",
                 "name": "Orb of destruction"

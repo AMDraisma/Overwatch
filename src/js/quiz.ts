@@ -25,10 +25,10 @@ namespace quiz{
 
             q.hero = GameMaster.PickRandom<IHero>(this.heroes);
             let category: ICategory = GameMaster.PickRandomProperty<ICategory>(categories);
-            q.categoryName = category.fullName;
+            q.category = category;
             q.text = this.questionText[category.questionTextName];
 
-            GameMaster.FillQuestion(q.hero, category.path, q);
+            GameMaster.FillQuestion(q.hero, q.category.path, q);
             
             return q;
         }

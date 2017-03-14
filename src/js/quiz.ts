@@ -23,9 +23,15 @@ namespace quiz{
         public GenerateQuestion(categories: {[category: string]: quiz.ICategory}): Question {
             let q: Question = new Question();
 
-            q.hero = GameMaster.PickRandom<IHero>(this.heroes);
-            let category: ICategory = GameMaster.PickRandomProperty<ICategory>(categories);
-            q.category = category;
+            let category: ICategory;
+            do {
+                q.hero = GameMaster.PickRandom<IHero>(this.heroes);
+                category = GameMaster.PickRandomProperty<ICategory>(categories);
+                if (GameMaster.GetObjectHasPath(q.hero, category.path)) {
+                    q.category = category;
+                }
+            } while (q.category === undefined);
+
             q.text = this.questionText[category.questionTextName];
 
             GameMaster.FillQuestion(q.hero, q.category.path, q);
@@ -58,14 +64,13 @@ namespace quiz{
                     return GameMaster.FillQuestion(obj[splitpath[0]], splitpath[1], question);
                 }
                 if (splitpath[0] === '*') {
-                    let subSelection: any
-                    let t: number = 20;
+                    let subSelection: any = obj;
                     // TODO: dear god think of something better
-                    while (question.answer === undefined && t > 0) {
-                        t-=1;
+                    while (question.answer === undefined) {
                         subSelection = GameMaster.PickRandom<any>(obj)
                         GameMaster.FillQuestion(subSelection, splitpath[1], question);
                     }
+                    // may not be just ability in future
                     question.ability = subSelection;
                     return question;
                 }
@@ -81,6 +86,55 @@ namespace quiz{
                 }
                 return question;
             }
+        }
+
+        /**
+         * Function that returns true if path exists in object.
+         * Always returns true when path branches (uses * or |)
+         * 
+         * @param obj 
+         * @param path 
+         */
+        private static GetObjectHasPath(obj: any, path: string): boolean {
+            let i: number = path.indexOf('/');
+            let splitpath: string[] = [];
+
+            if (i !== -1) {
+                splitpath[0] = path.substr(0, i);
+                splitpath[1] = path.substr(i+1);
+                if (splitpath[0] === '*') {
+                    for (let key in obj) {
+                        if (GameMaster.GetObjectHasPath(obj[key], splitpath[1])) {
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+                if (splitpath[0].indexOf('|') !== -1) {
+                    for (let key in splitpath[0].split('|')) {
+                        if (GameMaster.GetObjectHasPath(obj[key], splitpath[1])) {
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+                if (splitpath[0] in obj) {
+                    return GameMaster.GetObjectHasPath(obj[splitpath[0]], splitpath[1]);
+                }else{
+                    return false;
+                }
+            }else{
+                if (path.indexOf('|') !== -1) {
+                    for (let key in path.split('|')) {
+                        if (key in obj) {
+                            return true;
+                        }
+                    }
+                }else{
+                    return (path in obj);
+                }
+            }
+            return false;
         }
 
         /**

@@ -9,7 +9,7 @@ namespace quiz {
      * @class Question
      */
     export class Question {
-        public categoryName: string;
+        public category: ICategory;
         public text: IQuestionText;
         public hero: IHero;
         public attribute: string;

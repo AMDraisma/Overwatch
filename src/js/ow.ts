@@ -150,6 +150,7 @@ function populateAnswerElement(q: quiz.Question) {
                 }
             }
             answerDiv.appendChild(input);
+            input.focus();
 
             span = document.createElement('span');
             span.className = "input-group-addon";

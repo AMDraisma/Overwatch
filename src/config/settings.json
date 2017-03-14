@@ -5,51 +5,69 @@
         "roles": {
             "fullName": "Hero role",
             "path": "role",
-            "questionTextName": "heroAttribute"
+            "questionTextName": "heroAttribute",
+            "answerType": "choice",
+            "choices": [
+                "Offense",
+                "Defense",
+                "Tank",
+                "Support"
+            ]
         },
         "totalhealth": {
             "fullName": "Total health",
             "path": "totalhealth",
-            "questionTextName": "heroAttribute"
+            "questionTextName": "heroAttribute",
+            "answerType": "numeric",
+            "unit": "Total HP"
         },
         "headshots": {
             "fullName": "Headshots",
             "path": "abilities/*/attributes/headshots",
-            "questionTextName": "abilityEnabled"
+            "questionTextName": "abilityEnabled",
+            "answerType": "yesno"
         },
         "cooldown": {
             "fullName": "Cooldown",
             "path": "abilities/*/attributes/cooldown",
-            "questionTextName": "abilityAttribute"
+            "questionTextName": "abilityAttribute",
+            "answerType": "numeric",
+            "unit": "Seconds"
         },
         "hsa": {
             "fullName": "Health/Shield/Armor",
             "path": "health|shield|armor",
-            "questionTextName": "HSA"
+            "questionTextName": "HSA",
+            "answerType": "numeric",
+            "unit": "Hit points"
         },
         "movespeed": {
             "fullName": "Movement speed",
             "path": "movespeed",
-            "questionTextName": "heroAttribute"
+            "questionTextName": "heroAttribute",
+            "answerType": "numeric",
+            "unit": "Units/s"
         },
         "casttime": {
             "fullName": "Cast time",
             "path": "abilities/*/attributes/casttime",
-            "questionTextName": "abilityAttribute"
+            "questionTextName": "abilityAttribute",
+            "answerType": "numeric",
+            "unit": "Seconds"
         }
     },
 
     "questionText": {
         "abilityAttribute": {
-            "questionHeader": "What is the {categoryName} of",
+            "questionHeader": "What is the {category.fullName} of",
             "questionFooter": "{hero.name}'s {ability.name}?"
         },
         "abilityEnabled": {
-            "questionHeader": "Are {categoryName} enabled on",
+            "questionHeader": "Are {category.fullName} enabled on",
             "questionFooter": "{hero.name}'s {ability.name}?"
         },
         "heroAttribute": {
-            "questionHeader": "What is the {categoryName} of",
+            "questionHeader": "What is the {category.fullName} of",
             "questionFooter": "{hero.name}?"
         },
         "HSA": {

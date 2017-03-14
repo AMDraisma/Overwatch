@@ -181,9 +181,11 @@ function populateAnswerElement(q: quiz.Question) {
 }
 
 function showAnswerResult(correct: boolean, answer: string) {
+    resultDiv.className = "";
+    void resultDiv.offsetWidth;
     resultDiv.className = 'result ';
     resultDiv.className += correct ? 'result-correct' : 'result-wrong';
-    resultDiv.innerHTML = correct ? `${answer} is correct!` : `Wrong!<br>Correct answer is: ${answer}`;
+    resultDiv.innerHTML = correct ? `${answer} is correct!` : `Wrong! Correct answer is: ${answer}`;
 }
 
 function answer(q: quiz.Question, a: string) {

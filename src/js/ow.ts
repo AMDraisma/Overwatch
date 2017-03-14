@@ -1,12 +1,14 @@
 /// <reference path="_reference.ts" />
 
 let settings: quiz.Settings;
-
 let gameMaster: quiz.GameMaster;
 
 let questionDiv: HTMLDivElement;
 let categorySetDiv: HTMLDivElement;
 let categoryDiv: HTMLDivElement;
+
+let answerDiv: HTMLDivElement;
+let resultDiv: HTMLDivElement;
 
 let enabledCategories: {[category: string]: quiz.ICategory} = {};
 
@@ -107,9 +109,92 @@ function switchCategorySet(enabledCategorySetName: string) {
     }
 }
 
+function populateAnswerElement(q: quiz.Question) {
+    answerDiv.innerHTML = "";
+
+    let choiceBtn: HTMLButtonElement;
+    let input: HTMLInputElement;
+    let span: HTMLSpanElement;
+
+    switch (q.category.answerType) {
+        case 'yesno':
+            answerDiv.className = "btn-group";
+
+            choiceBtn = (document.createElement('btn') as HTMLButtonElement);
+            choiceBtn.className = "btn btn-success";
+            choiceBtn.innerText = "Yes";
+            choiceBtn.onclick = () => {
+                answer(q, "yes");
+            }
+            answerDiv.appendChild(choiceBtn);
+
+            choiceBtn = (document.createElement('btn') as HTMLButtonElement);
+            choiceBtn.className = "btn btn-danger";
+            choiceBtn.innerText = "No";
+            choiceBtn.onclick = () => {
+                answer(q, "no");
+            }
+            answerDiv.appendChild(choiceBtn);
+
+            break;
+
+        case 'numeric':
+            answerDiv.className = "input-group";
+
+            input = document.createElement('input');
+            input.type = "text";
+            input.className = "form-control";
+            input.onkeyup = (e) => {
+                if (e.keyCode === 13) {
+                    answer(q, input.value);
+                }
+            }
+            answerDiv.appendChild(input);
+
+            span = document.createElement('span');
+            span.className = "input-group-addon";
+            span.innerText = q.category.unit;
+            answerDiv.appendChild(span);
+
+            break;
+
+        case 'choice':
+            answerDiv.className = "btn-group";
+
+            for (let choice in q.category.choices) {
+                choice = q.category.choices[choice];
+                choiceBtn = (document.createElement('btn') as HTMLButtonElement);
+                choiceBtn.className = "btn btn-primary";
+                choiceBtn.innerText = choice;
+                choiceBtn.onclick = () => {
+                    answer(q, choice);
+                }
+                answerDiv.appendChild(choiceBtn);
+            }
+
+            break;
+            
+        default:
+            answerDiv.innerText = "Answertype not defined";
+            break;
+    }
+}
+
+function showAnswerResult(correct: boolean, answer: string) {
+    resultDiv.className = 'result ';
+    resultDiv.className += correct ? 'result-correct' : 'result-wrong';
+    resultDiv.innerHTML = correct ? `${answer} is correct!` : `Wrong!<br>Correct answer is: ${answer}`;
+}
+
+function answer(q: quiz.Question, a: string) {
+    a === q.answer ? showAnswerResult(true, q.answer) : showAnswerResult(false, q.answer);
+    refresh();
+}
+
 function refresh() {
     let q: quiz.Question = gameMaster.GenerateQuestion(enabledCategories);
     displayQuestion(q, questionDiv);
+    populateAnswerElement(q);
 }
 
 
@@ -117,6 +202,9 @@ $(document).ready(() => {
     questionDiv = (document.getElementById('questionDiv') as HTMLDivElement);
     categorySetDiv = (document.getElementById('categorySetDiv') as HTMLDivElement);
     categoryDiv = (document.getElementById('categoryDiv') as HTMLDivElement);
+    
+    answerDiv = (document.getElementById('answerDiv') as HTMLDivElement);
+    resultDiv = (document.getElementById('resultDiv') as HTMLDivElement);
 
     let heroData: quiz.IHero[];
     let questionTypes: {[questionType: string]: quiz.IQuestionText}

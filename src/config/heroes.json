@@ -830,16 +830,14 @@
                 "name": "Sentry turret"
             },
             {
-                "attributes": {
-                    "cooldown": "1"
-                },
-                "type": "ability",
-                "name": "Photon shield"
+                "attributes": {},
+                "type": "ultimate",
+                "name": "Teleporter pad"
             },
             {
                 "attributes": {},
                 "type": "ultimate",
-                "name": "Teleporter pad"
+                "name": "Shield generator"
             }
         ],
         "name": "symmetra",

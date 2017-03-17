@@ -110,8 +110,9 @@ namespace quiz{
                     return false;
                 }
                 if (splitpath[0].indexOf('|') !== -1) {
-                    for (let key in splitpath[0].split('|')) {
-                        if (GameMaster.GetObjectHasPath(obj[key], splitpath[1])) {
+                    let choices: string[] = splitpath[0].split('|');
+                    for (let key in choices) {
+                        if (GameMaster.GetObjectHasPath(obj[choices[key]], splitpath[1])) {
                             return true;
                         }
                     }
@@ -124,8 +125,9 @@ namespace quiz{
                 }
             }else{
                 if (path.indexOf('|') !== -1) {
-                    for (let key in path.split('|')) {
-                        if (key in obj) {
+                    let choices: string[] = path.split('|');
+                    for (let key in choices) {
+                        if (choices[key] in obj) {
                             return true;
                         }
                     }
